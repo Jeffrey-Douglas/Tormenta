@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+span#Juanehugoevitin{
+  font-size:7px
+}
+
 .segurador{
     display: flex;
     flex-wrap: wrap;
