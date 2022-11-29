@@ -20,6 +20,12 @@ span#Juanehugoevitin{
     background-color: brown;
 }
 
+.textomanual{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(195, 247, 208);
+}
+
 .manuais {
     max-width: 400px;
     max-height: 400px;
@@ -37,6 +43,8 @@ span#Juanehugoevitin{
     
     justify-content: center;
 }
+
+
 
 * {box-sizing: border-box;}
 
