@@ -58,7 +58,7 @@ span#Juanehugoevitin{
     justify-content: center;
 }
 
-ul {
+ul.cabecalho {
   list-style-type: none;
   margin: 0;
   padding: 0;
