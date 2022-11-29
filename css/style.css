@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+header{
+  position: absolute;
+  top: 0;
+	left: 0;
+	right: 0;
+}
+
+h1.titulo{
+	margin-top: 40px;
+	padding-top: 20px;
+	width: 100%;
+	max-width: 800px;
+}
+
 span#Juanehugoevitin{
   font-size:7px
 }
@@ -44,7 +58,7 @@ span#Juanehugoevitin{
     justify-content: center;
 }
 
-ul {
+ul.cabecalho {
   list-style-type: none;
   margin: 0;
   padding: 0;
