@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@font-face {
+  font-family: Iokharic;
+  src: url('/fonts/iokharic-font/Iokharic.ttf') format('truetype');
+  font-family: Benguiat;
+  src: url('/fonts/Benguiat.ttf') format('truetype');
+  font-family: Tormenta;
+  src: url('/fonts/Tormenta20.otf') format('opentype');
+}
 
 header{
   position: absolute;
@@ -78,10 +86,6 @@ li a {
   text-decoration: none;
 }
 
-.active {
-  background-color: #e90423;
-}
-
 .sobe:hover, .sobe:focus {
   box-shadow: inset 0 -3.25em 0 0 var(--hover);
 }
@@ -89,3 +93,84 @@ li a {
   --hover: #94e458;
   transition: 0.45s;
 }
+.caixabotaotormenta{
+  text-decoration: none;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 100px;
+  height: auto;
+  background-color: #2196F3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+
+
+.btn{
+  text-decoration: none;
+  padding: 9px;
+  margin: 5px 2.5px 5px 2.5px;
+  border-radius: 2px;
+  background-color: transparent;
+  border: 3px solid #333;
+  transition: all 0.5s ease;
+  cursor:pointer;
+}
+.btn:hover,
+button:hover {
+  outline: 0;
+  color: #fff;
+}
+.btn:active,
+button:active {
+  outline: 0;
+  color: #fff;
+}
+.btn a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.botaotormenta {
+  font-family: 'Tormenta';
+  padding: 0.7em 1.5em;
+  border: none;
+  color: rgb(255, 255, 255);
+  background: #ff412a;
+  box-shadow: inset 0 0 0 0 #ff412a;
+}
+.botaotormenta:hover {
+  box-shadow: inset 0 0 0 50px #dd1111;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  color: #fff;
+}
+
+footer a{
+color: rgb(255, 255, 255);
+}
+
+.rodape {
+  font-family: 'Iokharic';
+  margin: 0.5rem;
+  height: auto;
+  font-size: .8rem;
+  text-align: center;
+  min-width: 7rem;
+  padding: 0.5rem;
+  background-color: rgba(0,0,0,.6);
+}
+
+
+
