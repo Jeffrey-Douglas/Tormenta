@@ -1,11 +1,11 @@
 @charset "UTF-8";
 @font-face {
   font-family: Iokharic;
-  src: url('/fonts/iokharic-font/Iokharic.ttf') format('truetype');
+  src: url('../fonts/iokharic-font/Iokharic.ttf') format('truetype');
   font-family: Benguiat;
-  src: url('/fonts/Benguiat.ttf') format('truetype');
+  src: url('../fonts/Benguiat.ttf') format('truetype');
   font-family: Tormenta;
-  src: url('/fonts/Tormenta20.otf') format('opentype');
+  src: url('../fonts/Tormenta20.otf') format('opentype');
 }
 
 header{
