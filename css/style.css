@@ -165,17 +165,7 @@ footer{
   width: 100% auto;
   height: 100px;  
   color: #fff;
-} /*
-footer{
-  
-  position: sticky;
-  width:100% auto;
-  overflow:hidden;
-  height: 100%;
-  top: 0;
-	left: 0;
-	right: 0;
-}*/
+}
 
 html, body {
   min-height: 100%;
