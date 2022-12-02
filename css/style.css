@@ -156,16 +156,26 @@ button:active {
 }
 
 footer{
-  position: absolute;
+  position: static;
   bottom: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100% auto;
   height: 100px;  
   color: #fff;
-}
+} /*
+footer{
+  
+  position: sticky;
+  width:100% auto;
+  overflow:hidden;
+  height: 100%;
+  top: 0;
+	left: 0;
+	right: 0;
+}*/
 
 html, body {
   min-height: 100%;
@@ -173,17 +183,6 @@ html, body {
 body {
   padding: 0;
   margin: 0;
-}
-
-footser {
-  position: absolute;
-  bottom: 0;
-  background-color: blue;
-  color: #FFF;
-  width: 100%;
-  height: 100px;    
-  text-align: center;
-  line-height: 100px;
 }
 
 footer a{
