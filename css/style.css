@@ -11,6 +11,9 @@ body{
   margin: 0;
   width: 100%;
 }
+body#index{
+  background-color: black;
+}
 header{
   position: sticky;
   width:100% auto;
@@ -50,6 +53,18 @@ li a {
   transition: 0.45s;
 }
 
+.tormenta{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo{
+  width: 80%;
+  height: 50%;
+
+}
 
 h1.titulo{
   margin-top: 40px;
@@ -69,6 +84,7 @@ span#Juanehugoevitin{
     flex-wrap: wrap;
     justify-content: center;
     background-color: #2196F3;
+    
 }
 
 .centrosegurador{
