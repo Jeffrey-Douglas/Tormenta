@@ -11,16 +11,34 @@ table {
     border-bottom: 1px solid #dddddd;
     padding: 8px;
   }
+span{
+  justify-content: right;
+  text-align: right;
+  justify-items: right;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+  .botaoexpandirdescricao{
+    text-align: right;
+  }
 
   th.grupoarma{
 text-align: left;
 height: 40px;
   }
-  
-  th.tipoarma{
- text-align: center;
+
+  div#extra_1{
+    text-align: left;
   }
   
+  th.tipoarma{
+  text-align: center;
+  display: none;
+}
+tr.mostracima{
+
+}  
+
   tr:nth-child(even) {
     background-color: #dddddd;
     border: solid #dddddd;
@@ -33,4 +51,4 @@ height: 40px;
   td.nomearma{
     text-align: left;
   }
-  
+

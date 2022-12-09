@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="shortcut icon" href="../imagens/Fav-icon.webp" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tudo de Tormenta</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/loja.css">
+  <script src="../js/Loja.js"></script>
+  <header>
+    <ul class="cabecalho">
+      <li class="sobe"><a href="/index.html">Tudo de Tormenta</a></li>
+      <li class="sobe"><a href="https://jeffrey-douglas.github.io/Tormenta/">Site TTD</a></li>      <li class="sobe"><a href="criadordepersonagem.html">Criador de Presonagens</a></li>
+      <li class="sobe"><a href="download.html">Downloads</a></li>
+      <li class="sobe"><a href="grimorio.html">Grimório</a></li>
+      <li class="sobe"><a href="loja.html">Loja</a></li>
+      <li class="sobe"><a href="regrasdacasa.html">Regras da Casa</a> </li>
+      <li class="sobe"><a href="talentos.html">Talentos</a></li>
+    </ul>
+  </header>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<h1>Dynamic Table</h1>
+<!-- <script>
+    //Month Arrays -----------------------------------------------------------
+    var nomearma = ["Adaga", "Ataque Desarmado"];
+    var preco = ["2 TO", "—"];
+    var dano = ["1d4", "1d3"];
+    var critico = ["19-20", "x2" ];
+    var distancia = ["3 m", "—"];
+    var peso = ["0,5 kg", "—"];
+    var tipodano = ["Perfuração", "Esmagamento"]
+    var monthsEnglish = ["January","February","March","April", "May", "June", "July", "August", "September","October","November","December"];
+    var monthsSpanish = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre ","Octubre ","Noviembre","Diciembre"];
+    //Static content ---------------------------------------------------------
+    document.write("<table border='1' width='200'>")
+    document.write("<tr><th>Armas Simples</th><th>Preço</th><th>Dano do item</th><th>Crítico</th><th>Distância</th><th>Peso</th><th>Tipo do dano</th></tr>");
+    //Dynamic content --------------------------------------------------------
+    for(var i=0; i<12;i++)
+    {
+        document.write("<tr><td>" + nomearma[i] + "</td><td>" + preco[i] + "</td><td>" + dano[i] + "</td><td>" + critico[i] + "</td><td>" + distancia[i] + "</td><td>" +  peso[i] + "</td><td>" + tipodano[i] +"</td></tr>");
+    }
+    //Static content  --------------------------------------------------------
+    document.write("</table>")
+</script> -->
+
+
+<body>
+    <table>
+        <thead>
+            <tr class="topo">
+                <th>Arma Simples</th>
+                <th>Preço</th>
+                <th>Dano do item</th>
+                <th>Crítico</th>
+                <th>Distância</th>
+                <th>Peso</th>
+                <th>Tipo do dano <a  id="show_1"><span>+</span></a></th>
+            </tr>
+        </thead>
+        <tr>
+            <th class="tipoarma show" colspan="7">Corpo-a-Corpo Leves <a href="#" id="show_2"><span>+</span></a></th>
+        </tr>
+        <tbody id="cacum"></tbody>
+        <tr>
+            <th class ="tipoarma" colspan ="7">Corpo-a-Corpo Duas Mãos</th>
+        </tr>
+        <tbody id="corpoacorpodm"></tbody>
+    </table>
+</body>
+
+<div class="menuHeader" id="menu"+ i>
+    <span><a href="#" onclick="Home()">Home</a></span>
+</div>
+<div class="menuHeader" id="menu"+ i>
+    <span><a href="#" onclick="NewTransaction()">New Transaction</a></span>
+</div>
+<div class="menuHeader" id="menu"+ i>
+    <span><a href="#" onclick="Portfolio()">Portfolio</a></span>
+</div>
+
+<script>
+let sortDirection = false;
+let armaData = [
+    {nomeArma: "Adaga", preco: "2 TO", dano: "1d4", critico: "19-20",distancia: "3 m", peso: "0,5 kg", tipoDano: "Perfuração", descricao: "esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada." },
+    {nomeArma: "Ataque Desarmado", preco: "—", dano: "1d3", critico: "x2",distancia: "—", peso: "—", tipoDano: "Esmagamento", descricao: "batatas" },
+    {nomeArma: "Espada curta", preco: "10 TO", dano: "1d6", critico: "19-20",distancia: "—", peso: "1 kg<", tipoDano: "Perfuração", descricao: "batatasauawhei" },
+    {nomeArma: "Manopla", preco: "5 TO", dano: "1d4", critico: "x2",distancia: "—", peso: "1 kg", tipoDano: "Esmagamento", descricao: "batatasoaisjdaoiwejkjkaskcjzlk hbasiod" }
+];
+let corpoacorpoduasmaos = [
+    {nomeArma: "Adaga", preco: "2 TO", dano: "1d4", critico: "19-20",distancia: "3 m", peso: "0,5 kg", tipoDano: "Perfuração" },
+    {nomeArma: "Ataque Desarmado", preco: "—", dano: "1d3", critico: "x2",distancia: "—", peso: "—", tipoDano: "Esmagamento" }
+
+]
+
+window.onload = () => {
+    loadTableData(armaData);
+    loadcorpoacorpodm(corpoacorpoduasmaos);
+}
+function loadTableData(armaData) {
+    const tableBodycacum = document.getElementById('cacum');
+    let dataHtml = '';
+    for (let arma of armaData) {
+        dataHtml += `<tr class="mostracima" id="menu" + i><td class= "nomearma">${arma.nomeArma}</td>
+            <td>${arma.preco}<td>${arma.dano}</td><td>${arma.critico}</td>
+            <td>${arma.distancia}</td><td>${arma.peso}</td>
+            <td>${arma.tipoDano}<a href="#" id="menu"><span>+</span></a><td></tr>
+                <tr><td colspan="7"><div id="menuHeader"style="display: none;">${arma.descricao}</div></td></tr>`;
+
+    //             tableBodycacum.forEach(function (armaData, index) {
+    //   display = display +`<tr>
+    //         <th scope="row">${index + 1}</th>
+    //         <td>${arma.preco}</td>
+
+    //         <td><button type="button" id="${index}"</td>
+    //     </tr>`;
+    // });
+
+
+    $(document).ready(function () {
+        var i=0;
+        $('.menuHeader').each(function()
+        {  
+        i++;
+        var newID='menu'+i;
+        $(this).attr('id',newID);
+        $(this).val(i);
+        });
+    });
+    }
+    tableBodycacum.innerHTML = dataHtml;
+}
+
+function loadcorpoacorpodm(corpoacorpoduasmaos) {
+    const tableBodycorpoacorpodm = document.getElementById('corpoacorpodm');
+    let DataHtml = '';
+    for (let duasmaos of corpoacorpoduasmaos) {
+        DataHtml += `<tr><td class= "nomearma">${duasmaos.nomeArma}</td><td>${duasmaos.preco}<td>${duasmaos.dano}</td><td>${duasmaos.critico}</td><td>${duasmaos.distancia}</td><td>${duasmaos.peso}</td><td>${duasmaos.tipoDano}</td></tr>`;
+    }
+    tableBodycorpoacorpodm.innerHTML = DataHtml;
+}
+
+$(document).ready(function(){
+        $('tr.mostracima').slideUp();
+        $('th.show').slideUp();
+        $('a#show_1').click(function()
+        {
+          $(this).find('span').text(function(_, value) {
+      return value == '-' ? '+' : '-'
+    });
+    
+          $('th.show').slideToggle();
+        });
+
+        $('a#show_2').click(function() {
+    $(this).find('span').text(function(_, value) {
+      return value == '+' ? '-' : '+'
+    });
+    
+    $('tr.mostracima').slideToggle(100);
+  });
+
+        // $('a#show_2').click(function()
+        // {
+        //   $('tr.mostra').slideToggle("slow");
+        // });
+     }
+     );
+       $("a[id^=show_]").click(function() 
+        {
+          $(this).find('span').text(function(_, value) {
+      return value == '-' ? '+' : '-'
+    });
+          $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
+        });
+ 
+
+
+ 
+</script>
+
