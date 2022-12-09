@@ -36,6 +36,9 @@ height: 40px;
   display: none;
 }
 
+tr.showSimplesLeves, tr.showSimplesUmaMao, tr.showSimplesDuasMaos, tr.showSimplesDistancia, div.escondeSimplesleves{
+  display: none;
+}
 
   tr:nth-child(even) {
     background-color: #dddddd;

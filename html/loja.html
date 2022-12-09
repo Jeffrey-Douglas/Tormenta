@@ -169,22 +169,32 @@ $(document).ready(function()
 {
   $('#fechatudo').click(function(){
     $('.tipoarma').css("display","none");
+    $('.escondebtn').css("display","none");
+    $('.escondeLeves').css("display","none");
   });
-  $('a#botaoexpandirdescricao').click(function()
+  $('a#botaoExpandirDescricao').click(function()
   {
     $(this).find('span').text(function(_, value) 
     {
       return value == '-' ? '+' : '-'
     });
-    $('th.show').slideToggle();
+    $('th.showSimples').slideToggle();
   });
-  $('th.show').click(function() 
+  $('th.simpleslLeves').click(function() 
   {
      $(this).find('span').text(function(_, value) 
      {
        return value == '-' ? '+' : '-'
      });
-    $('tr.mostracima').slideToggle();
+    $('tr.showSimplesLeves').slideToggle();
+  });
+  $('th.simplesUmaMao').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showSimplesUmaMao').slideToggle();
   });
    $("a[id^=show_]").click(function() 
    {
@@ -195,6 +205,7 @@ $(document).ready(function()
      $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
   });
  });
+ 
 
   </script>
   <button id="fechatudo">fechatudo</button>
@@ -207,161 +218,200 @@ $(document).ready(function()
           <th>Crítico</th>
           <th>Distância</th>
           <th>Peso</th>
-          <th>Tipo do dano [<a id="botaoexpandirdescricao" class="botaoexpandirdescricao" href="#"><span>+</span></a>]</th>
+          <th>Tipo do dano [<a id="botaoExpandirDescricao" class="botaoExpandirDescricao" href="#"><span>+</span></a>]</th>
         </tr>
         <tr>
-          <th class="tipoarma show" colspan="7">Corpo-a-Corpo Leves <a href="#"><span>+</span></a></th>
+          <th class="tipoarma showSimples simpleslLeves" colspan="7">Corpo-a-Corpo Leves <a href="#"><span>+</span></a></th>
         </tr>
-        <tr class="mostracima">
+        <tr class="escondebtn showSimplesLeves">
           <td class="nomearma">Adaga </td>
           <td>2 TO</td>
           <td>1d4</td>
           <td>19-20 </td>
           <td>3m</td>
           <td>0,5 kg</td>
-          <td>Perfuração<a href="#" id="show_6"><span>+</span></a></td>
+          <td>Perfuração<a href="#" id="show_1"><span>+</span></a></td>
         </tr>
         <tr>
           <td colspan="7">
-             <div id="extra_6" style="display: none;">
-             esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+             <div class="escondeLeves" id="extra_1" style="display: none;">
+             Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
             (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
               </div>
           </td>
       </tr>
-          <tr title="Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. Você pode escolher ataque desarmado para talentos como Foco em Arma">
+          <tr class="escondebtn showSimplesLeves">
             <td class="nomearma" >Ataque desarmado</td>
             <td>—</td>
             <td>1d3</td>
             <td>x2</td>
             <td>—</td>
             <td>—</td>
-            <td>Esmagamento</td>
-          </tr>
-          <tr title="É o tipo mais comum de espada, muito usada por soldados, legionários e guardas de milícia — ou como arma secundária. Mede entre 40 e 50cm de comprimento.">
-            <td class="nomearma" >Espada curta</td>
-            <td>10 TO</td>
-            <td>1d6</td>
-            <td>19-20</td>
-            <td>—</td>
-            <td>1 kg</td>
-            <td>Perfuração</td>
-          </tr>
-          <tr title="Luva metálica que protege a mão e também permite socos mais fortes. Uma armadura completa inclui um par de manoplas. Você não pode ser desarmado quando usa esta arma.">
-            <td class="nomearma">Manopla</td>
-            <td>5 TO</td>
-            <td>1d4</td>
-            <td>x2</td>
-            <td>—</td>
-            <td>1 kg</td>
-            <td>Esmagamento</td>
-          </tr>
-          <tr class="header">
-            <th class="tipoarma" colspan="7">Corpo-a-Corpo Uma Mão</th>
-          </tr>
-          <tr title="Um pedaço de madeira empunhado como arma, geralmente usado por bárbaros ou criaturas brutais — ou como arma improvisada, como um galho de árvore ou pedaço de mobília. Sendo fácilde conseguir, seu preço é zero.">
-            <td class="nomearma">Clava</td>
-            <td>—</td>
-            <td>1d6</td>
-            <td>x2</td>
-            <td>—</td>
-            <td>1,5 kg</td>
-            <td>Esmagamento</td>
-          </tr>
-          <tr title="“Lança” é o nome de qualquer arma feita com uma haste de madeira e uma ponta afiada, natural ou metálica. Por sua facilidade de fabricação, é muito comum entre orcs, kobolds e outras raças menos civilizadas. Uma lança pode ser arremessada.">
-            <td class="nomearma">Lança</td>
-            <td>2 TO</td>
-            <td>1d6</td>
-            <td>x2</td>
-            <td>6m</td>
-            <td>1,5 kg</td>
-            <td>Perfuração</td>
-          </tr>
-          <tr title="Bastão metálico com um peso cheio de protuberâncias na extremidade, amaça é muito usada por clérigos que fazem votos de não derramar sangue. De fato, um golpe de maça nem sempre derrama sangue, mas esmaga ossos...">
-            <td class="nomearma">Maça</td>
-            <td>12 TO</td>
-            <td>1d8</td>
-            <td>x2</td>
-            <td>—</td>
-            <td>6 kg</td>
-            <td>Esmagamento</td>
-          </tr>
-          <tr class="header">
-            <th class="tipoarma" colspan="7">Corpo-a-Corpo Duas Mãos</th>
+            <td>Esmagamento<a href="#" id="show_2"><span>+</span></a></td>
           </tr>
           <tr>
-            <td class="nomearma">Bordão</td>
-            <td>—</td>
-            <td>1d6/1d6</td>
-            <td>2x</td>
-            <td>—</td>
-            <td>2 kg</td>
-            <td>Esmagamento</td>
-          </tr>
-          <tr>
-            <td class="nomearma">Pique</td>
-            <td>2 TO</td>
-            <td>1d8</td>
-            <td>2x</td>
-            <td>—</td>
-            <td>5 kg</td>
-            <td>Perfuração</td>
-          </tr>
-          <tr>
-            <td class="nomearma">Tacape</td>
-            <td>—</td>
-            <td>1d10</td>
-            <td>x2</td>
-            <td>—</td>
-            <td>4 kg</td>
-            <td>Esmagamento</td>
-          </tr>
-          <th class="tipoarma" colspan="7">Ataque à Distância</th>
-          <tr>
-            <td class="nomearma">Ácido</td>
-            <td>10 TO</td>
-            <td>2d4</td>
-            <td>—</td>
-            <td>3m</td>
-            <td>0,5 kg</td>
-            <td>Ácido</td>
-          </tr>
-          <tr>
-            <td class="nomearma">Água Benta</td>
-            <td>25 TO</td>
-            <td>2d6</td>
-            <td>—</td>
-            <td>3m</td>
-            <td>0,5 kg</td>
-            <td>Especial</td>
-          </tr>
-          <tr>
-            <td class="nomearma">Arco Curto</td>
-            <td>30 TO</td>
-            <td>1d6</td>
-            <td>3x</td>
-            <td>12 m</td>
-            <td>1 kg</td>
-            <td>Perfuração</td>
-          </tr>
-              <tr>
-                <td class="municao">Flecha</td>
-                <td>0,5 TP</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-                <td>75 g</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td class="municao">Flechas (20)</td>
-                <td>1 TO</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-                <td>1,5 kg</td>
-                <td>—</td>
-              </tr>
+            <td colspan="7">
+               <div class="escondeLeves" id="extra_2" style="display: none;">
+                Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
+                se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
+                Você pode escolher ataque desarmado para talentos como Foco em Arma. 
+              </div>
+            </td>
+        </tr>
+        <tr class="escondebtn showSimplesLeves">
+          <td class="nomearma" >Espada Curta</td>
+          <td>10 TO</td>
+          <td>1d6</td>
+          <td>19-20</td>
+          <td>—</td>
+          <td>1 kg</td>
+          <td>Perfuração<a href="#" id="show_3"><span>+</span></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+              <div class="escondeLeves" id="extra_3" style="display: none;">
+              é o tipo mais comum de espada, muito usada 
+              por soldados, legionários e guardas de milícia — ou como arma 
+              secundária. Mede entre 40 e 50cm de comprimento.
+            </div>
+          </td>
+        </tr>
+        <tr class="escondebtn showSimplesLeves">
+          <td class="nomearma">Manopla</td>
+          <td>5 TO</td>
+          <td>1d4</td>
+          <td>x2</td>
+          <td>—</td>
+          <td>1 kg</td>
+          <td>Esmagamento<a href="#" id="show_4"><span>+</span></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+              <div class="escondeLeves" id="extra_4" style="display: none;">
+                Luva metálica que protege a mão e também permite socos mais fortes.
+                Uma armadura completa inclui um par de manoplas. Você não pode ser 
+                desarmado quando usa esta arma 
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th class="tipoarma showSimples simplesUmaMao" colspan="7">Corpo-a-Corpo Uma Mão<a href="#"><span>+</span></a></th>
+        </tr>
+        <tr class="escondebtn showSimplesUmaMao">
+          <td class="nomearma">Clava</td>
+          <td>—</td>
+          <td>1d6</td>
+          <td>x2</td>
+          <td>—</td>
+          <td>1,5 kg</td>
+          <td>Esmagamento<a href="#" id="show_5"><span>+</span></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+              <div class="escondeLeves" id="extra_5" style="display: none;">
+                Um pedaço de madeira empunhado como arma,
+                geralmente usado por bárbaros ou criaturas brutais — ou como arma 
+                improvisada, como um galho de árvore ou pedaço de mobília.
+                Sendo fácil de conseguir, seu preço é zero.
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+        <tr title="“Lança” é o nome de qualquer arma feita com uma haste de madeira e uma ponta afiada, natural ou metálica. Por sua facilidade de fabricação, é muito comum entre orcs, kobolds e outras raças menos civilizadas. Uma lança pode ser arremessada.">
+          <td class="nomearma">Lança</td>
+          <td>2 TO</td>
+          <td>1d6</td>
+          <td>x2</td>
+          <td>6m</td>
+          <td>1,5 kg</td>
+          <td>Perfuração</td>
+        </tr>
+        <tr title="Bastão metálico com um peso cheio de protuberâncias na extremidade, amaça é muito usada por clérigos que fazem votos de não derramar sangue. De fato, um golpe de maça nem sempre derrama sangue, mas esmaga ossos...">
+          <td class="nomearma">Maça</td>
+          <td>12 TO</td>
+          <td>1d8</td>
+          <td>x2</td>
+          <td>—</td>
+          <td>6 kg</td>
+          <td>Esmagamento</td>
+        </tr>
+        <tr>
+          <th class="tipoarma showSimples" colspan="7">Corpo-a-Corpo Duas Mãos</th>
+        </tr>
+        <tr>
+          <td class="nomearma">Bordão</td>
+          <td>—</td>
+          <td>1d6/1d6</td>
+          <td>2x</td>
+          <td>—</td>
+          <td>2 kg</td>
+          <td>Esmagamento</td>
+        </tr>
+        <tr>
+          <td class="nomearma">Pique</td>
+          <td>2 TO</td>
+          <td>1d8</td>
+          <td>2x</td>
+          <td>—</td>
+          <td>5 kg</td>
+          <td>Perfuração</td>
+        </tr>
+        <tr>
+          <td class="nomearma">Tacape</td>
+          <td>—</td>
+          <td>1d10</td>
+          <td>x2</td>
+          <td>—</td>
+          <td>4 kg</td>
+          <td>Esmagamento</td>
+        </tr>
+        <th class="tipoarma showSimples" colspan="7">Ataque à Distância</th>
+        <tr>
+          <td class="nomearma">Ácido</td>
+          <td>10 TO</td>
+          <td>2d4</td>
+          <td>—</td>
+          <td>3m</td>
+          <td>0,5 kg</td>
+          <td>Ácido</td>
+        </tr>
+        <tr>
+          <td class="nomearma">Água Benta</td>
+          <td>25 TO</td>
+          <td>2d6</td>
+          <td>—</td>
+          <td>3m</td>
+          <td>0,5 kg</td>
+          <td>Especial</td>
+        </tr>
+        <tr>
+          <td class="nomearma">Arco Curto</td>
+          <td>30 TO</td>
+          <td>1d6</td>
+          <td>3x</td>
+          <td>12 m</td>
+          <td>1 kg</td>
+          <td>Perfuração</td>
+        </tr>
+            <tr>
+              <td class="municao">Flecha</td>
+              <td>0,5 TP</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>75 g</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td class="municao">Flechas (20)</td>
+              <td>1 TO</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>1,5 kg</td>
+              <td>—</td>
+            </tr>
         </tr>
           <tr>
             <td class="nomearma">Azagaia</td>
