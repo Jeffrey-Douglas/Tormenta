@@ -64,3 +64,50 @@
 // }
 // });
 
+// $(document).ready(function(){
+
+//     $('a#botaoexpandirdescricaomarcial').click(function()
+//           {
+//             $(this).find('span').text(function(_, value) 
+//             {
+//             return value == '-' ? '+' : '-'
+//             });
+//             $('th.showb').slideToggle();
+//           });
+//   });
+  
+//   $(document).ready(function(){
+//           $('a#botaoexpandirdescricao').click(function()
+//           {
+//             $(this).find('span').text(function(_, value) {
+//         return value == '-' ? '+' : '-'
+//       });
+//             $('th.show').slideToggle();
+//           });
+  
+  
+//           $('a#show_2').click(function() {
+//       $(this).find('span').text(function(_, value) {
+//         return value == '-' ? '+' : '-'
+//       });
+      
+//       $('tr.mostracima').slideToggle(100);
+//     });
+  
+  
+  
+//           // $('a#show_2').click(function()
+//           // {
+//           //   $('tr.mostra').slideToggle("slow");
+//           // });
+//        }
+//        );
+//          $("a[id^=show_]").click(function() 
+//           {
+            
+//             $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
+//             $(this).find('span').text(function(_, value) {
+//         return value == '-' ? '+' : '-'
+//       });
+//           });
+   

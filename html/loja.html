@@ -23,62 +23,212 @@
 </head>
 <body>
     <h1 class="titulo">Loja</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+<!-- <script>
+$(document).ready(function() {
+  $('tr:not(.header)').hide();
 
-    <style>
-      #myDIV {
-        width: 100%;
-        padding: 50px 0;
-        text-align: center;
-        background-color: lightblue;
-        margin-top: 20px;
-      }
-      </style>
-      </head>
-      <body>
-      
-      <script>
-      function myFunction() {
-        var x = document.getElementById("myDIV");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-      }
-      </script>
+  $('tr.header').click(function() {
+    $(this).find('span').text(function(_, value) {
+      return value == '-' ? '+' : '-'
+    });
+    
+    $(this).nextUntil('tr.header').slideToggle(100, function() {});
+  });
+});
+
+  </script> -->
 
 
 
+<!-- 
+  <script>
+    $("a[id^=show_]").click(function(event) {
+    $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
+    event.preventDefault();
+})
+  </script> -->
+  <!-- <table>
+    <thead>
+      <tr class="topo">
+        <th class="grupoarma">Armas Simples</th>
+        <th>Preço</th>
+        <th>Dano do item</th>
+        <th>Crítico</th>
+        <th>Distância</th>
+        <th>Peso</th>
+        <th>Tipo do dano [<a id="botaoexpandirdescricao" class="botaoexpandirdescricao" href="#"><span>+</span></a>]</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="tipoarma show" colspan="7">Corpo-a-Corpo Leves <a href="#" id="show_2"><span>+</span></a></th>
+      </tr>
 
 
-    <div>
-      <table>
+        <tr class="mostracima">
+          <td class="nomearma">Adaga </td>
+          <td>2 TO</td>
+          <td>1d4</td>
+          <td>19-20 </td>
+          <td>3m</td>
+          <td>0,5 kg</td>
+          <td>Perfuração<a href="#" id="show_3"><span>+</span></a></td>
+        </tr>
         <tr>
-            <th class="grupoarma" colspan="1">Armas Simples</th>
-            <th>Preço</th>
-            <th>Dano do item</th>
-            <th>Crítico</th>
-            <th>Distância</th>
-            <th>Peso</th>
-            <th>Tipo do dano</th>
-          </tr>
-          <tr>
-            <th class="tipoarma" colspan="7">Corpo-a-Corpo Leves</th>
-          </tr>
-          <tr title="Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.">
-            
-            <td class="nomearma" ><span><button onclick="myFunction()">Try it</button>
-      
-              <div id="myDIV">
-                Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
-              </div></span>  Adaga</td>
+          <td colspan="7">
+             <div id="extra_3" style="display: none;">   o 'show_"numero"'-'extra_"numero"' aparentemente nao esta funcionando com  "td" mas segue esse caminho q ta dando certo
+             esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+            (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
+              </div>
+          </td>
+      </tr>
+    <tr class="mostracima">
+      <td class="nomearma" >Ataque desarmado</td>
+      <td>—</td>
+      <td>1d3</td>
+      <td>x2</td>
+      <td>—</td>
+      <td>—</td>
+      <td>Esmagamento <a href="#" id="show_4">+</a></td>
+    </tr>
+    <tr> -->
+      <!-- <td colspan="7">
+          <div id="extra_4" style="display: none;">
+            Você pode atacar com um soco ou chute — 
+            ou qualquer outro golpe que use seu próprio corpo — 
+            como se fosse uma arma de corpo-a-corpo. 
+            No entanto, um ataque desarmado causa apenas dano não letal. 
+            Você pode escolher ataque desarmado para talentos como Foco em Arma
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="tipoarma show" colspan="7">Corpo-a-Corpo Uma Mão</th>
+    </tr>
+    
+    <tr class="mostrab">
+      <td class="nome">Clava</td>
+        <td>—</td>
+        <td>1d6</td>
+        <td>x2</td>
+        <td>—</td>
+        <td>1,5 kg</td>
+        <td>Esmagamento</td>
+      </tr>
+      <tr class="mostrab">
+        <td class="nome">Lança</td>
+        <td>2 TO</td>
+        <td>1d6</td>
+        <td>x2</td>
+        <td>6m</td>
+        <td>1,5 kg</td>
+        <td>Perfuração</td>
+      </tr>
+
+      <thead>
+        <tr class="topo">
+          <th class="grupoarma">Armas Marciais</th>
+          <th>Preço</th>
+          <th>Dano do item</th>
+          <th>Crítico</th>
+          <th>Distância</th>
+          <th>Peso</th>
+          <th>Tipo do dano [<a  id="botaoexpandirdescricaomarcial" class="botaoexpandirdescricao" href="#"><span>+</span></a>]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="tipoarma showb" colspan="7">Corpo-a-Corpo Leves <a href="#" id="show_8"><span>+</span></a></th>
+        </tr>
+            <tr class="mostracima">
+            <td class="nomearma">Adaga </td>
             <td>2 TO</td>
             <td>1d4</td>
             <td>19-20 </td>
             <td>3m</td>
             <td>0,5 kg</td>
-            <td>Perfuração</td>
+            <td>Perfuração<a href="#" id="show_8"><span>+</span></a></td>
           </tr>
+          <tr>
+            <td colspan="7">
+                <div id="extra_3" style="display: none;">   o 'show_"numero"'-'extra_"numero"' aparentemente nao esta funcionando com  "td" mas segue esse caminho q ta dando certo-->
+                    <!-- esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+                    (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
+                </div>
+            </td>
+        </tr>
+  
+
+    </tbody>
+  </table>  -->
+
+  <script>
+$(document).ready(function()
+{
+  $('#fechatudo').click(function(){
+    $('.tipoarma').css("display","none");
+  });
+  $('a#botaoexpandirdescricao').click(function()
+  {
+    $(this).find('span').text(function(_, value) 
+    {
+      return value == '-' ? '+' : '-'
+    });
+    $('th.show').slideToggle();
+  });
+  $('th.show').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.mostracima').slideToggle();
+  });
+   $("a[id^=show_]").click(function() 
+   {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+     $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
+  });
+ });
+
+  </script>
+  <button id="fechatudo">fechatudo</button>
+    <div>
+      <table>
+        <tr>
+          <th class="grupoarma" colspan="1">Armas Simples</th>
+          <th>Preço</th>
+          <th>Dano do item</th>
+          <th>Crítico</th>
+          <th>Distância</th>
+          <th>Peso</th>
+          <th>Tipo do dano [<a id="botaoexpandirdescricao" class="botaoexpandirdescricao" href="#"><span>+</span></a>]</th>
+        </tr>
+        <tr>
+          <th class="tipoarma show" colspan="7">Corpo-a-Corpo Leves <a href="#"><span>+</span></a></th>
+        </tr>
+        <tr class="mostracima">
+          <td class="nomearma">Adaga </td>
+          <td>2 TO</td>
+          <td>1d4</td>
+          <td>19-20 </td>
+          <td>3m</td>
+          <td>0,5 kg</td>
+          <td>Perfuração<a href="#" id="show_6"><span>+</span></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+             <div id="extra_6" style="display: none;">
+             esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+            (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
+              </div>
+          </td>
+      </tr>
           <tr title="Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. Você pode escolher ataque desarmado para talentos como Foco em Arma">
             <td class="nomearma" >Ataque desarmado</td>
             <td>—</td>
@@ -106,7 +256,9 @@
             <td>1 kg</td>
             <td>Esmagamento</td>
           </tr>
-          <th class="tiposarma" colspan="7">Corpo-a-Corpo Uma Mão</th>
+          <tr class="header">
+            <th class="tipoarma" colspan="7">Corpo-a-Corpo Uma Mão</th>
+          </tr>
           <tr title="Um pedaço de madeira empunhado como arma, geralmente usado por bárbaros ou criaturas brutais — ou como arma improvisada, como um galho de árvore ou pedaço de mobília. Sendo fácilde conseguir, seu preço é zero.">
             <td class="nomearma">Clava</td>
             <td>—</td>
@@ -134,8 +286,8 @@
             <td>6 kg</td>
             <td>Esmagamento</td>
           </tr>
-          <tr>
-            <th colspan="7">Corpo-a-Corpo Duas Mãos</th>
+          <tr class="header">
+            <th class="tipoarma" colspan="7">Corpo-a-Corpo Duas Mãos</th>
           </tr>
           <tr>
             <td class="nomearma">Bordão</td>
@@ -164,7 +316,7 @@
             <td>4 kg</td>
             <td>Esmagamento</td>
           </tr>
-          <th colspan="7">Ataque à Distância</th>
+          <th class="tipoarma" colspan="7">Ataque à Distância</th>
           <tr>
             <td class="nomearma">Ácido</td>
             <td>10 TO</td>
@@ -302,7 +454,7 @@
             <th>Tipo do dano</th>
           </tr>
           <tr>
-          <th colspan="7">Corpo-a-Corpo Leve</th>
+          <th class="tipoarma"colspan="7">Corpo-a-Corpo Leve</th>
           <tr>
             <td class="nomearma">Escudo Leve</td>
             <td>5 TO</td>
@@ -331,7 +483,7 @@
             <td>1 kg</td>
             <td>Esmagamento</td>
           </tr>
-          <th colspan="7">Corpo-a-Corpo Uma Mão</th>
+          <th class="tipoarma" colspan="7">Corpo-a-Corpo Uma Mão</th>
           <tr>
             <td class="nomearma">Cimitarra</td>
             <td>15 TO</td>
@@ -413,7 +565,7 @@
             <td>2 kg</td>
             <td>Perfuração</td>
           </tr>
-          <th colspan="7">Corpo-a-Corpo Duas Mãos</th>
+          <th class="tipoarma" colspan="7">Corpo-a-Corpo Duas Mãos</th>
           <tr>
             <td class="nomearma">Alabarda</td>
             <td>10 TO</td>
@@ -468,7 +620,7 @@
             <td>6 kg</td>
             <td>Corte</td>
           </tr>
-          <th colspan="7">Ataque à Distância</th>
+          <th class="tipoarma" colspan="7">Ataque à Distância</th>
           <tr>
             <td class="nomearma">Arco Composto</td>
             <td>75 TO</td>
