@@ -36,9 +36,18 @@ height: 40px;
   display: none;
 }
 
-tr.showSimplesLeves, tr.showSimplesUmaMao, tr.showSimplesDuasMaos, tr.showSimplesDistancia, div.escondeSimplesleves{
+tr.showArmaSimplesLeves, 
+tr.showArmaSimplesUmaMao, 
+tr.showArmaSimplesDuasMaos, 
+tr.showArmaSimplesDistancia, 
+div.escondeSimplesLeves,
+tr.showTipoSimplesLeves,
+tr.showTipoSimplesUmaMao,
+tr.showTipoSimplesDuasMaos,
+tr.showTipoSimplesDistancia{
   display: none;
 }
+
 
   tr:nth-child(even) {
     background-color: #dddddd;
@@ -53,3 +62,10 @@ tr.showSimplesLeves, tr.showSimplesUmaMao, tr.showSimplesDuasMaos, tr.showSimple
     text-align: left;
   }
 
+  span {
+    cursor: pointer;
+  }
+a {
+  text-decoration: none;
+  color: #0645ad;
+  background: none;}
