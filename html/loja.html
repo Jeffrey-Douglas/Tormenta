@@ -172,7 +172,7 @@ $(document).ready(function()
     $('.escondebtn').css("display","none");
     $('.escondeLeves').css("display","none");
   });
-  $('a#botaoExpandirDescricao').click(function()
+  $('a#botaoExpandirDescricaoSimples').click(function()
   {
     $(this).find('span').text(function(_, value) 
     {
@@ -212,6 +212,7 @@ $(document).ready(function()
      });
     $('tr.showArmaSimplesDistancia').slideToggle();
   });
+
   
    $("a[id^=show_]").click(function() 
    {
@@ -220,6 +221,50 @@ $(document).ready(function()
        return value == '-' ? '+' : '-'
      });
      $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
+  });
+ });
+ 
+ $(document).ready(function()
+{
+  $('a#botaoExpandirDescricaoMarciais').click(function()
+  {
+    $(this).find('span').text(function(_, value) 
+    {
+      return value == '-' ? '+' : '-'
+    });
+    $('th.showTipoMarciais').slideToggle();
+  });
+  $('th#tipoMarciaisLeves').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaMarciaisLeves').slideToggle();
+  });
+  $('th#tipoMarciaisUmaMao').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaMarciaisUmaMao').slideToggle();
+  });
+  $('th#tipoMarciaisDuasMaos').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaMarciaisDuasMaos').slideToggle();
+  });
+  $('th#tipoMarciaisDistancia').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaMarciaisDistancia').slideToggle();
   });
  });
  
@@ -235,7 +280,7 @@ $(document).ready(function()
           <th>Crítico</th>
           <th>Distância</th>
           <th>Peso</th>
-          <th>Tipo do dano [<a id="botaoExpandirDescricao" class="botaoExpandirDescricao"><span>+</span></a>]</th>
+          <th>Tipo do dano [<a id="botaoExpandirDescricaoSimples" class="botaoExpandirDescricao"><span>+</span></a>]</th>
         </tr>
         <tr>
           <th class="tipoarma showTipoSimples" id="tipoSimplesLeves" colspan="7">Corpo-a-Corpo Leves <a><span>+</span></a></th>
@@ -256,24 +301,24 @@ $(document).ready(function()
             (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
               </div>
           </td>
-      </tr>
-          <tr class="escondebtn showArmaSimplesLeves">
-            <td class="nomearma" >Ataque desarmado</td>
-            <td>—</td>
-            <td>1d3</td>
-            <td>x2</td>
-            <td>—</td>
-            <td>—</td>
-            <td>Esmagamento<a   id="show_2"><span>+</span></a></td>
-          </tr>
-          <tr>
-            <td colspan="7">
-               <div class="escondeLeves" id="extra_2" style="display: none;">
-                Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
-                se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
-                Você pode escolher ataque desarmado para talentos como Foco em Arma. 
-              </div>
-            </td>
+        </tr>
+        <tr class="escondebtn showArmaSimplesLeves">
+          <td class="nomearma" >Ataque desarmado</td>
+          <td>—</td>
+          <td>1d3</td>
+          <td>x2</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Esmagamento<a   id="show_2"><span>+</span></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+            <div class="escondeLeves" id="extra_2" style="display: none;">
+            Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
+            se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
+            Você pode escolher ataque desarmado para talentos como Foco em Arma. 
+            </div>
+          </td>
         </tr>
         <tr class="escondebtn showArmaSimplesLeves">
           <td class="nomearma" >Espada Curta</td>
@@ -697,83 +742,143 @@ $(document).ready(function()
             <th>Crítico</th>
             <th>Distância</th>
             <th>Peso</th>
-            <th>Tipo do dano</th>
+            <th>Tipo do dano[<a id="botaoExpandirDescricaoMarciais" class="botaoExpandirDescricao"><span>+</span></a>]</th>
           </tr>
           <tr>
-          <th class="tipoarma"colspan="7">Corpo-a-Corpo Leve</th>
-          <tr>
+          <th class="tipoarma showTipoMarciais" id="tipoMarciaisLeves" colspan="7">Corpo-a-Corpo Leve<a  ><span>+</span></a></th>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisLeves">
             <td class="nomearma">Escudo Leve</td>
             <td>5 TO</td>
             <td>1d4</td>
             <td>x2</td>
             <td>—</td>
             <td>3 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_27"><span>+</span></a></td>
           </tr>
           <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_27" style="display: none;">
+                  Você pode usar em escudo leve como uma arma, mas perde seu bônus na CA até o próximo turno.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisLeves">
             <td class="nomearma">Machadinha</td>
             <td>6 TO</td>
             <td>1d6</td>
             <td>x3</td>
             <td>3 m</td>
             <td>2 kg</td>
-            <td>Corte
-            </td>
+            <td>Corte<a id="show_28"><span>+</span></a></td>
           </tr>
           <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_28" style="display: none;">
+                  Uma ferramenta bem útil para cortar madeira, e também inimigos. Uma machadinha pode ser arremessada.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisLeves">
             <td class="nomearma">Martelo</td>
             <td>1 TO</td>
             <td>1d6</td>
             <td>2x</td>
             <td>6 m</td>
             <td>1 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_29"><span>+</span></a></td>
           </tr>
-          <th class="tipoarma" colspan="7">Corpo-a-Corpo Uma Mão</th>
           <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_29" style="display: none;">
+                  Em sua essência é uma ferramenta para bater pregos, em caso de problemas uma arma pra bater em inimigos.
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="tipoarma showTipoMarciais" id="tipoMarciaisUmaMao" colspan="7">Corpo-a-Corpo Uma Mão<a  ><span>+</span></a></th>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Cimitarra</td>
             <td>15 TO</td>
             <td>1d6</td>
             <td>18-20</td>
             <td>—</td>
             <td>2 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_30"><span>+</span></a></td>
           </tr>
           <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_30" style="display: none;">
+                  Uma espada com a lâmina curva, leve e muito afiada. O talento Acuidade com Arma se aplica à cimitarra.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Escudo Pesado</td>
             <td>15 TO</td>
             <td>1d6</td>
             <td>x2</td>
             <td>—</td>
             <td>7 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_31"><span>+</span></a></td>
           </tr>
           <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_31" style="display: none;">
+                  Você pode usar em escudo pesado como uma arma, mas perde seu bônus na CA até o próximo turno.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Espada Longa</td>
             <td>15 TO</td>
             <td>1d8</td>
             <td>19-20</td>
             <td>—</td>
             <td>2 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_32"><span>+</span></a></td>
           </tr>
           <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_32" style="display: none;">
+                  Arma típica de guerreiros humanos, mas também extremamente comum entre elfos. 
+                  Esta espada de dois gumes tem lâmina reta medindo entre 85 cm a 1,15 m de comprimento total e peso entre 0,9 kg e 1,5 kg.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Florete</td>
             <td>20 TO</td>
             <td>1d6</td>
             <td>x3</td>
             <td>—</td>
             <td>1 kg</td>
-            <td>Perfuração</td>
+            <td>Perfuração<a id="show_33"><span>+</span></a></td>
           </tr>
           <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_33" style="display: none;">
+                  Com uma lâmina fina e afiada, esta espada se torna muito precisa. O talento Acuidade com arma se aplica ao florete.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Machado de Batalha</td>
             <td>10 TO</td>
             <td>1d8</td>
             <td>x3</td>
             <td>—</td>
             <td>3 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_34"><span>+</span></a></td>
+          </tr>
+          <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_34" style="display: none;">
+                  Diferente de uma machadinha, este não é um simples instrumento para cortes de árvores,
+                  mas sim uma poderosa arma capaz de causar ferimentos terríveis.
+                </div>
+            </td>
           </tr>
           <tr>
             <td class="nomearma">Mangal</td>
@@ -782,8 +887,16 @@ $(document).ready(function()
             <td>x2</td>
             <td>—</td>
             <td>2,5 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_34"><span>+</span></a></td>
           </tr>
+          <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_34" style="display: none;">
+                  Diferente de uma machadinha, este não é um simples instrumento para cortes de árvores,
+                  mas sim uma poderosa arma capaz de causar ferimentos terríveis.
+                </div>
+            </td>
+          </tr>>
           <tr>
             <td class="nomearma">Martelo de guerra</td>
             <td>12 TO</td>
@@ -791,7 +904,15 @@ $(document).ready(function()
             <td>x3</td>
             <td>—</td>
             <td>2,5 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_34"><span>+</span></a></td>
+          </tr>
+          <tr>
+            <td colspan="7">
+                <div class="escondeLeves" id="extra_34" style="display: none;">
+                  Diferente de uma machadinha, este não é um simples instrumento para cortes de árvores,
+                  mas sim uma poderosa arma capaz de causar ferimentos terríveis.
+                </div>
+            </td>
           </tr>
           <tr>
             <td class="nomearma">Picareta</td>

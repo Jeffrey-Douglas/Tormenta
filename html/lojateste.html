@@ -86,7 +86,7 @@ let sortDirection = false;
 let armaData = [
     {nomeArma: "Adaga", preco: "2 TO", dano: "1d4", critico: "19-20",distancia: "3 m", peso: "0,5 kg", tipoDano: "Perfuração", descricao: "esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada." },
     {nomeArma: "Ataque Desarmado", preco: "—", dano: "1d3", critico: "x2",distancia: "—", peso: "—", tipoDano: "Esmagamento", descricao: "batatas" },
-    {nomeArma: "Espada curta", preco: "10 TO", dano: "1d6", critico: "19-20",distancia: "—", peso: "1 kg<", tipoDano: "Perfuração", descricao: "batatasauawhei" },
+    {nomeArma: "Espada curta", preco: "10 TO", dano: "1d6", critico: "19-20",distancia: "—", peso: "1 kg", tipoDano: "Perfuração", descricao: "batatasauawhei" },
     {nomeArma: "Manopla", preco: "5 TO", dano: "1d4", critico: "x2",distancia: "—", peso: "1 kg", tipoDano: "Esmagamento", descricao: "batatasoaisjdaoiwejkjkaskcjzlk hbasiod" }
 ];
 let corpoacorpoduasmaos = [
@@ -109,26 +109,6 @@ function loadTableData(armaData) {
             <td>${arma.tipoDano}<a href="#" id="menu"><span>+</span></a><td></tr>
                 <tr><td colspan="7"><div id="menuHeader"style="display: none;">${arma.descricao}</div></td></tr>`;
 
-    //             tableBodycacum.forEach(function (armaData, index) {
-    //   display = display +`<tr>
-    //         <th scope="row">${index + 1}</th>
-    //         <td>${arma.preco}</td>
-
-    //         <td><button type="button" id="${index}"</td>
-    //     </tr>`;
-    // });
-
-
-    $(document).ready(function () {
-        var i=0;
-        $('.menuHeader').each(function()
-        {  
-        i++;
-        var newID='menu'+i;
-        $(this).attr('id',newID);
-        $(this).val(i);
-        });
-    });
     }
     tableBodycacum.innerHTML = dataHtml;
 }
@@ -162,21 +142,21 @@ $(document).ready(function(){
     $('tr.mostracima').slideToggle(100);
   });
 
-        // $('a#show_2').click(function()
-        // {
-        //   $('tr.mostra').slideToggle("slow");
-        // });
-     }
-     );
-       $("a[id^=show_]").click(function() 
-        {
-          $(this).find('span').text(function(_, value) {
-      return value == '-' ? '+' : '-'
-    });
-          $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
-        });
+  if ( $target.closest("td")) {
+      $target.slideToggle();
+    } else {
+        $target.closest("tr").next().find("p").slideToggle();
+    }
+});
+    //  );
+    //    $("a[id^=show_]").click(function() 
+    //     {
+    //       $(this).find('span').text(function(_, value) {
+    //   return value == '-' ? '+' : '-'
+    // });
+    //       $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
+    //     });
  
-
 
  
 </script>

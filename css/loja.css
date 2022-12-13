@@ -44,7 +44,15 @@ div.escondeSimplesLeves,
 tr.showTipoSimplesLeves,
 tr.showTipoSimplesUmaMao,
 tr.showTipoSimplesDuasMaos,
-tr.showTipoSimplesDistancia{
+tr.showTipoSimplesDistancia,
+tr.showArmaMarciaisLeves,
+tr.showArmaMarciaisUmaMao,
+tr.showArmaMarciaisDuasMaos,
+tr.showArmaMarciaisDistancia,
+tr.showTipoMarciaisLeves,
+tr.showTipoMarciaisUmaMao,
+tr.showTipoMarciaisDuasMaos,
+tr.showTipoMarciaisDistancia{
   display: none;
 }
 
