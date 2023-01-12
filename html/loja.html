@@ -33,12 +33,12 @@ $(document).ready(function()
     $('.escondebtn').css("display","none");
     $('.escondeLeves').css("display","none");
   });
-  $('tr#botaoExpandirDescricaoSimples').click(function()
+  $('a#botaoExpandirDescricaoSimples').click(function()
   {
-    // $(this).find('span').text(function(_, value) 
-    // {
-    //   return value == '-' ? '+' : '-'
-    // });
+    $(this).find('span').text(function(_, value) 
+    {
+      return value == '-' ? '+' : '-'
+    });
     $('th.showTipoSimples').slideToggle();
     $('tr.batata').slideToggle();
     $('th.botaoExpandirDescricao').toggle("active");
@@ -131,6 +131,49 @@ $(document).ready(function()
     $('tr.showArmaMarciaisDistancia').slideToggle();
   });
  });
+ $(document).ready(function() 
+ {
+  $('a#botaoExpandirDescricaoExoticas').click(function()
+  {
+    $(this).find('span').text(function(_, value) 
+    {
+      return value == '-' ? '+' : '-'
+    });
+    $('th.showTipoExoticas').slideToggle();
+  });
+  $('th#tipoExoticasLeves').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaExoticasLeves').slideToggle();
+  });
+  $('th#tipoExoticasUmaMao').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaExoticasUmaMao').slideToggle();
+  });
+  $('th#tipoExoticasDuasMaos').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaExoticasDuasMaos').slideToggle();
+  });
+  $('th#tipoExoticasDistancia').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaExoticasDistancia').slideToggle();
+  });
+ });
  
 
   </script>
@@ -138,21 +181,19 @@ $(document).ready(function()
   <button id="fechatudo"> fechatudo </button>
     <div>
       <table>
-        <tr id="botaoExpandirDescricaoSimples">
+        <tr>
           <th class="grupoarma" colspan="1">Armas Simples</th>
           <th>Preço</th>
           <th>Dano do item</th>
           <th>Crítico</th>
           <th>Distância</th>
           <th>Peso</th>
-          <th>Tipo do dano <button class="botaoExpandirDescricao"></button>
-            <!-- [<a id="botaoExpandirDescricaoSimples" class="botaoExpandirDescricao"><span>+</span></a>] -->
-          </th>
+          <th>Tipo do dano[<a id="botaoExpandirDescricaoSimples" class="botaoExpandirDescricao"><span>+</span></a>]</th>
         </tr>
-        <tr class="batata">
-          <th  class="tipoarma showTipoSimples" id="tipoSimplesLeves" colspan="7">Corpo-a-Corpo Leves <a><span>+</span></a></th>
+        <tr>
+          <th class="tipoarma showTipoSimples" id="tipoSimplesLeves" colspan="7">Corpo-a-Corpo Leves <a><span>+</span></a></th>
         </tr>
-        <tr class="escondebtn showArmaSimplesLeves barata">
+        <tr class="escondebtn showArmaSimplesLeves">
           <td class="nomearma">Adaga </td>
           <td>2 TO</td>
           <td>1d4</td>
@@ -598,7 +639,6 @@ $(document).ready(function()
                   Faça uma taque à distância. 
                   Qualquer criatura a até 3m do alvo sofre 4d6 pontos de dano (ou metade, com um teste de Reflexos, CD 
                   igual ao resultado da jogadade ataque).
-                  
               </div>
             </td>
           </tr>
@@ -663,7 +703,7 @@ $(document).ready(function()
             </td>
           </tr>
           <tr>
-            <th class="tipoarma showTipoMarciais" id="tipoMarciaisUmaMao" colspan="7">Corpo-a-Corpo Uma Mão<a  ><span>+</span></a></th>
+            <th class="tipoarma showTipoMarciais" id="tipoMarciaisUmaMao" colspan="7">Corpo-a-Corpo Uma Mão<a><span>+</span></a></th>
           </tr>
           <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Cimitarra</td>
@@ -781,7 +821,7 @@ $(document).ready(function()
                 </div>
             </td>
           </tr>
-          <tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Picareta</td>
             <td>8 TO</td>
             <td>1d8</td>
@@ -798,125 +838,234 @@ $(document).ready(function()
                 </div>
             </td>
           </tr>
-
-          <tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Tridente</td>
             <td>15 TO</td>
             <td>1d8</td>
             <td>x2</td>
             <td>—</td>
             <td>2 kg</td>
-            <td>Perfuração</td>
+            <td>Perfuração <a id="show_38"><span>+</span></a></td>
+          </tr>
+          <tr class="escondeLeves" id="extra_38">
+            <td colspan="7">
+                <div>
+                  Uma lança com três pontas favorita dos gladiadores, 
+                  própria para prender as pernas do oponente. Você recebe +4 em 
+                  jogadas de ataque para derrubar.
+                </div>
+            </td>
           </tr>
           <th class="tipoarma" colspan="7">Corpo-a-Corpo Duas Mãos</th>
-          <tr>
+          <tr class="escondebtn showArmaMarciaisDuasMaos">
             <td class="nomearma">Alabarda</td>
             <td>10 TO</td>
             <td>1d10</td>
             <td>x3</td>
             <td>—</td>
             <td>6 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_39"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_39">
+            <td colspan="7">
+                <div>
+                  Uma haste de madeira com 2m de comprimento e 
+                  uma lâmina de machado na extremidade. A alabarda é uma arma 
+                  de haste (você pode usá-la para atacar inimigos a até 3m, mas não 
+                  podeusá-lacontrainimigos adjacentes).
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisDuasMaos">
             <td class="nomearma">Alfange</td>
             <td>75 TO</td>
             <td>2d4</td>
             <td>x3</td>
             <td>—</td>
             <td>4 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_40"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_40">
+            <td colspan="7">
+                <div>
+                  Espada de lâmina muita larga e curva, bastante usada por guerreiros do Deserto da Perdição
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisDuasMaos">
             <td class="nomearma">Espada Grande</td>
             <td>50 TO</td>
             <td>2d6</td>
             <td>19-20</td>
             <td>—</td>
             <td>4 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_41"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_41">
+            <td colspan="7">
+                <div>
+                  Enorme e muito pesada, esta espada tem 
+                  1,5m de comprimento. É uma das armas mais poderosas que uma 
+                  criatura Média consegue empuhar.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisDuasMaos">
             <td class="nomearma">Foice</td>
             <td>18 TO</td>
             <td>2d4</td>
             <td>x4</td>
             <td>—</td>
             <td>5 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_42"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_42">
+            <td colspan="7">
+                <div>
+                  Diferente da ferramenta usada por fazendeiros, uma foice de combate é mais forte e balanceada.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisDuasMaos">
             <td class="nomearma">Lança Montada</td>
             <td>10 TO</td>
             <td>1d8</td>
             <td>x3</td>
             <td>—</td>
             <td>5 kg</td>
-            <td>Perfuração</td>
+            <td>Perfuração<a id="show_43"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_43">
+            <td colspan="7">
+                <div>
+                  Se você estiver montado, pode usar esta arma com apenas uma mão.
+                  A lança montada é uma arma de haste, e causa dano dobrado quando usada numa investida montada.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisDuasMaos">
             <td class="nomearma">Machado Grande</td>
             <td>20 TO</td>
             <td>1d12</td>
             <td>x3</td>
             <td>—</td>
             <td>6 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_44"><span>+</span></a></td>
           </tr>
-          <th class="tipoarma" colspan="7">Ataque à Distância</th>
+          <tr class="escondeLeves" id="extra_44">
+            <td colspan="7">
+                <div>
+                  Este imenso machado com lâmina dupla é uma das armas mais perigosas que existem.
+                </div>
+            </td>
+          </tr>
           <tr>
-            <td class="nomearma">Arco Composto</td>
-            <td>75 TO</td>
-            <td>1d6</td>
-            <td></td>
-            <td>18 m</td>
-            <td>1 kg</td>
-            <td></td>
+            <th class="tipoarma showTipoMarciais" id="tipoMarciaisDistancia" colspan="7">Ataque à Distância<a><span>+</span></a></th>
           </tr>
-              <tr>
-                <td class="municao">Flecha</td>
-                <td>0,5 TP</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-                <td>75 g</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td class="municao">Flechas (20)</td>
-                <td>1 TO</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-                <td>1,5 kg</td>
-                <td>—</td>
-              </tr>
-              <tr>
-            <td class="nomearma">Besta Pesada</td>
-            <td>50 TO</td>
-            <td>1d6</td>
-            <td>x3</td>
-            <td>24 m</td>
-            <td>1,5 kg</td>
-            <td>Perfuração</td>
-          </tr>
-              <tr>
+            <tr class="escondebtn showArmaMarciaisDistancia">
+              <td class="nomearma">Arco Composto</td>
+              <td>75 TO</td>
+              <td>1d6</td>
+              <td>x3</td>
+              <td>18 m</td>
+              <td>1 kg</td>
+              <td>Perfuração<a id="show_45"><span>+</span></a></td>
+            </tr>
+            <tr class="escondeLeves" id="extra_45">
+              <td colspan="7">
+                <div>
+                  Este arco é feito de chifres, madeira ou ossos laminados.
+                  Devido a isso,o arco composto dispara com mais força queum arco comum.
+                  Ao contrário de outras armas dedisparo, você aplica seu modificador de Força 
+                  nas jogadas de dano com um arco composto. Usar um arco composto exige as duas mãos.
+                </div>
+              </td>
+            </tr>
+            <tr class="escondebtn showArmaMarciaisDistancia">
+              <td class="municao">Flecha</td>
+              <td>0,5 TP</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>75 g</td>
+              <td>—<a id="show_46"><span>+</span></a></td>
+            </tr>
+            <tr class="escondeLeves" id="extra_46">
+              <td colspan="7">
+                <div>
+                  Hastes de madeira com ponta metálica e penas para 
+                  estabilizar o voo, flechas são vendidas em unidades ou em aljavas com 20 unidades. 
+                  Recarregar um arco com uma flecha é uma ação livre.
+                </div>
+              </td>
+            </tr>
+            <tr class="escondebtn showArmaMarciaisDistancia">
+              <td class="municao">Flechas (20)</td>
+              <td>1 TO</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>1,5 kg</td>
+              <td>—<a id="show_47"><span>+</span></a></td>
+            </tr>
+            <tr class="escondeLeves" id="extra_47">
+              <td colspan="7">
+                <div>
+                  Hastes de madeira com ponta metálica e penas para 
+                  estabilizar o voo, flechas são vendidas em unidades ou em aljavas com 20 unidades. 
+                  Recarregar um arco com uma flecha é uma ação livre.
+                </div>
+              </td>
+            </tr>
+            <tr class="escondebtn showArmaMarciaisDistancia">
+              <td class="nomearma">Besta Pesada</td>
+              <td>50 TO</td>
+              <td>1d6</td>
+              <td>x3</td>
+              <td>24 m</td>
+              <td>1,5 kg</td>
+              <td>Perfuração<a id="show_48"><span>+</span></a></td>
+            </tr>
+            <tr class="escondeLeves" id="extra_48">
+              <td colspan="7">
+                <div>
+                  Versão maior e mais potente da besta leve. 
+                  Recarregar uma besta pesada é uma ação padrão. 
+                  Usar esta besta também exige as duas mãos.
+                </div>
+              </td>
+            </tr>
+              <tr class="escondebtn showArmaMarciaisDistancia">
                 <td class="municao">Virote</td>
                 <td>0,5 TP</td>
                 <td>—</td>
                 <td>—</td>
                 <td>—</td>
                 <td>50 g</td>
-                <td>—</td>
+                <td>—<a id="show_49"><span>+</span></a></td>
               </tr>
-              <tr>
+              <tr class="escondeLeves" id="extra_49">
+                <td colspan="7">
+                  <div>
+                    Pequenas setas de madeira que servem como munição para bestas.
+                  </div>
+                </td>
+              </tr>
+              <tr class="escondebtn showArmaMarciaisDistancia">
                 <td class="municao">Virotes (20)</td>
                 <td>1 TO</td>
                 <td>—</td>
                 <td>—</td>
                 <td>—</td>
                 <td>0,5 kg</td>
-                <td>—</td>
+                <td>—<a id="show_50"><span>+</span></a></td>
+              </tr>
+              <tr class="escondeLeves" id="extra_50">
+                <td colspan="7">
+                  <div>
+                    Pequenas setas de madeira que servem como munição para bestas.
+                  </div>
+                </td>
               </tr>
           <tr>
             <th class="grupoarma" colspan="1">Armas Exóticas</th>
@@ -925,40 +1074,67 @@ $(document).ready(function()
             <th>Crítico</th>
             <th>Distância</th>
             <th>Peso</th>
-            <th>Tipo do dano</th>
+            <th>Tipo do dano[<a id="botaoExpandirDescricaoExoticas" class="botaoExpandirDescricao"><span>+</span></a>]</th>
           </tr>
           <tr>
-            <th class="tipoarma" colspan="7">Corpo-a-Corpo Leves</th>
+            <th class="tipoarma showTipoExoticas" id="tipoExoticasLeves" colspan="7">Corpo-a-Corpo Leves<a><span>+</span></a></th>
           </tr>
-          <tr>
+          <tr class="escondebtn showArmaExoticasLeves"> 
             <td class="nomearma">Nunchaku</td>
             <td>2 TO</td>
             <td>1d6</td>
             <td>x3</td>
             <td>—</td>
             <td>1 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_51"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_51">
+            <td colspan="7">
+              <div>
+                Formado por dois bastões curtos de madeira ligados por uma corrente ou tira de couro, 
+                o nunchaku era usado por camponeses para separar o joio do trigo, sendo mais tarde a dotado como arma.
+                O nunchaku é também uma arma de monge (significa que pode ser usado com determinadas habilidades, como a rajada de golpes).
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasLeves">
             <td class="nomearma">Sai</td>
               <td>5 TO</td>
               <td>1d6</td>
               <td>x2</td>
               <td>3 m</td>
               <td>0,5 kg </td>
-              <td>Esmagamento</td>
-          </tr>
-          <tr>
+              <td>Esmagamento<a id="show_52"><span>+</span></a></td>
+            </tr>
+            <tr class="escondeLeves" id="extra_52">
+              <td colspan="7">
+                <div>
+                  Parecida com um grande garfo de metal, a adaga sai é própria para prender as armas do oponente.
+                  Você recebe +4 em jogadas de ataque para desarmar.
+                  A sai é uma arma de monge (significa que pode ser usada com determinadas habilidades, como rajada de golpes).
+                </div>
+              </td>
+            </tr>
+          <tr class="escondebtn showArmaExoticasLeves">
             <td class="nomearma">Wakizashi</td>
             <td>350 TO </td>
             <td>1d8</td>
             <td>19-20 </td>
             <td>—</td>
             <td>1 kg </td>
-            <td>Corte</td>
+            <td>Corte<a id="show_53"><span>+</span></a></td>
+          </tr>
+          <tr class="escondeLeves" id="extra_53">
+            <td colspan="7">
+              <div>
+                Versão mais curta da katana. A katana e wakizashi, juntas, formam um conjunto chamado daisho — são as armas tradicionais do samurai. 
+                Alguns samurais carregam a wakizashi apenas como uma peça simbólica, enquanto outros a usam como arma secundária. 
+                Como a katana, a wakizashi é também uma arma obra-prima (+1 nas jogadas de ataque, custo já está incluso no preço).
+              </div>
+            </td>
           </tr>
           <tr>
-            <th class="tipoarma" colspan="7">Corpo-a-Corpo Uma Mão</th>
+            <th class="tipoarma showTipoExoticas" id="tipoExoticasUmaMao" colspan="7">Corpo-a-Corpo Uma Mão<a><span>+</span></a></th>
           </tr>
           <tr>
             <td class="nomearma">Chicote</td>
@@ -1006,7 +1182,7 @@ $(document).ready(function()
             <td>Corte</td>
           </tr>
           <tr>
-            <th class="tipoarma" colspan="7">Corpo-a-Corpo Duas Mãos</th>
+            <th class="tipoarma showTipoExoticas" id="tipoExoticasDuasMaos" colspan="7">Corpo-a-Corpo Duas Mãos<a><span>+</span></a></th>
           </tr>
           <tr>
             <td class="nomearma">Corrente com cravos</td>
@@ -1045,7 +1221,7 @@ $(document).ready(function()
             <td>Esmagamento</td>
           </tr>
           <tr>
-            <th class="tipoarma" colspan="7">Ataque à Distância</th>
+            <th class="tipoarma showTipoExoticas" id="tipoExoticasDistancia" colspan="7">Ataque à Distância<a><span>+</span></a></th>
           </tr>
           <tr>
             <td class="nomearma">Mosquete</td>
