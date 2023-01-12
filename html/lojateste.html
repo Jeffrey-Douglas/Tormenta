@@ -61,37 +61,27 @@
             </tr>
         </thead>
         <tr>
-            <th class="tipoarma show" colspan="7">Corpo-a-Corpo Leves <a href="#" id="show_2"><span>+</span></a></th>
+            <th class="tipoarma mostratipoarma" colspan="7">Corpo-a-Corpo Leves <a href="#" id="show_2"><span>+</span></a></th>
         </tr>
         <tbody id="cacum"></tbody>
         <tr>
-            <th class ="tipoarma" colspan ="7">Corpo-a-Corpo Duas Mãos</th>
+            <th class ="tipoarma mostratipoarma" colspan ="7">Corpo-a-Corpo Duas Mãos<a href="#" id="show_3"><span>+</span></a></th>
         </tr>
         <tbody id="corpoacorpodm"></tbody>
     </table>
 </body>
 
-<div class="menuHeader" id="menu"+ i>
-    <span><a href="#" onclick="Home()">Home</a></span>
-</div>
-<div class="menuHeader" id="menu"+ i>
-    <span><a href="#" onclick="NewTransaction()">New Transaction</a></span>
-</div>
-<div class="menuHeader" id="menu"+ i>
-    <span><a href="#" onclick="Portfolio()">Portfolio</a></span>
-</div>
-
 <script>
 let sortDirection = false;
 let armaData = [
-    {nomeArma: "Adaga", preco: "2 TO", dano: "1d4", critico: "19-20",distancia: "3 m", peso: "0,5 kg", tipoDano: "Perfuração", descricao: "esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada." },
+    {nomeArma: "Adaga", preco: "2 TO", dano: "1d4", critico: "19-20",distancia: "3 m", peso: "0,5 kg", tipoDano: "Perfuração", descricao: "esta faca afiada é muito usada por ladrões e assassinos" },
     {nomeArma: "Ataque Desarmado", preco: "—", dano: "1d3", critico: "x2",distancia: "—", peso: "—", tipoDano: "Esmagamento", descricao: "batatas" },
-    {nomeArma: "Espada curta", preco: "10 TO", dano: "1d6", critico: "19-20",distancia: "—", peso: "1 kg<", tipoDano: "Perfuração", descricao: "batatasauawhei" },
+    {nomeArma: "Espada curta", preco: "10 TO", dano: "1d6", critico: "19-20",distancia: "—", peso: "1 kg", tipoDano: "Perfuração", descricao: "batatasauawhei" },
     {nomeArma: "Manopla", preco: "5 TO", dano: "1d4", critico: "x2",distancia: "—", peso: "1 kg", tipoDano: "Esmagamento", descricao: "batatasoaisjdaoiwejkjkaskcjzlk hbasiod" }
 ];
 let corpoacorpoduasmaos = [
-    {nomeArma: "Adaga", preco: "2 TO", dano: "1d4", critico: "19-20",distancia: "3 m", peso: "0,5 kg", tipoDano: "Perfuração" },
-    {nomeArma: "Ataque Desarmado", preco: "—", dano: "1d3", critico: "x2",distancia: "—", peso: "—", tipoDano: "Esmagamento" }
+    {nomeArma: "Espada Curta", preco: "2 TO", dano: "1d4", critico: "19-20",distancia: "3 m", peso: "0,5 kg", tipoDano: "Perfuração", descricao: "jasoiqjwoiejqowijdajbkfmnoaisjdksks" },
+    {nomeArma: "Espada Larga", preco: "—", dano: "1d3", critico: "x2",distancia: "—", peso: "—", tipoDano: "Esmagamento" }
 
 ]
 
@@ -103,32 +93,14 @@ function loadTableData(armaData) {
     const tableBodycacum = document.getElementById('cacum');
     let dataHtml = '';
     for (let arma of armaData) {
-        dataHtml += `<tr class="mostracima" id="menu" + i><td class= "nomearma">${arma.nomeArma}</td>
-            <td>${arma.preco}<td>${arma.dano}</td><td>${arma.critico}</td>
+        dataHtml += `<tr class="mostracima" id="mostracorpoacorpoleves" style="display: none;">
+            <td class= "nomearma">${arma.nomeArma}</td>
+            <td >${arma.preco}<td>${arma.dano}</td><td>${arma.critico}</td>
             <td>${arma.distancia}</td><td>${arma.peso}</td>
-            <td>${arma.tipoDano}<a href="#" id="menu"><span>+</span></a><td></tr>
-                <tr><td colspan="7"><div id="menuHeader"style="display: none;">${arma.descricao}</div></td></tr>`;
+            <td>${arma.tipoDano}<a id="menu"><span>+</span></a></td>
+            <tr style="display: none;"><td class="descricao" colspan="7">${arma.descricao}</td></tr>
+                </tr>`;
 
-    //             tableBodycacum.forEach(function (armaData, index) {
-    //   display = display +`<tr>
-    //         <th scope="row">${index + 1}</th>
-    //         <td>${arma.preco}</td>
-
-    //         <td><button type="button" id="${index}"</td>
-    //     </tr>`;
-    // });
-
-
-    $(document).ready(function () {
-        var i=0;
-        $('.menuHeader').each(function()
-        {  
-        i++;
-        var newID='menu'+i;
-        $(this).attr('id',newID);
-        $(this).val(i);
-        });
-    });
     }
     tableBodycacum.innerHTML = dataHtml;
 }
@@ -137,46 +109,85 @@ function loadcorpoacorpodm(corpoacorpoduasmaos) {
     const tableBodycorpoacorpodm = document.getElementById('corpoacorpodm');
     let DataHtml = '';
     for (let duasmaos of corpoacorpoduasmaos) {
-        DataHtml += `<tr><td class= "nomearma">${duasmaos.nomeArma}</td><td>${duasmaos.preco}<td>${duasmaos.dano}</td><td>${duasmaos.critico}</td><td>${duasmaos.distancia}</td><td>${duasmaos.peso}</td><td>${duasmaos.tipoDano}</td></tr>`;
+        DataHtml += `<tr class="mostracima" id="mostracorpoacorpoduasmaos" style="display: none;">
+            <td class= "nomearma">${duasmaos.nomeArma}</td>
+            <td>${duasmaos.preco}<td>${duasmaos.dano}</td>
+            <td>${duasmaos.critico}</td>
+            <td>${duasmaos.distancia}</td>
+            <td>${duasmaos.peso}</td>
+            <td>${duasmaos.tipoDano}<a id="menu"><span>+</span></a></td></tr>`;
+  
     }
     tableBodycorpoacorpodm.innerHTML = DataHtml;
 }
 
-$(document).ready(function(){
-        $('tr.mostracima').slideUp();
-        $('th.show').slideUp();
-        $('a#show_1').click(function()
-        {
-          $(this).find('span').text(function(_, value) {
-      return value == '-' ? '+' : '-'
-    });
-    
-          $('th.show').slideToggle();
-        });
 
-        $('a#show_2').click(function() {
-    $(this).find('span').text(function(_, value) {
-      return value == '+' ? '-' : '+'
-    });
+$('.btn-expand').click(function () {
+    var botao = $(this);
+    var $rows = botao.prev('.table').find('tr');
     
-    $('tr.mostracima').slideToggle(100);
+    if (botao.text() === '+') {
+      $rows.show();
+      botao.text('-');
+    } else {
+      $rows.slice(7).hide();
+      botao.text('+');
+    }
   });
 
-        // $('a#show_2').click(function()
-        // {
-        //   $('tr.mostra').slideToggle("slow");
-        // });
-     }
-     );
-       $("a[id^=show_]").click(function() 
-        {
-          $(this).find('span').text(function(_, value) {
-      return value == '-' ? '+' : '-'
-    });
-          $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
-        });
- 
+$(document).ready(function(){
+    // $('tr.mostracima').slideUp();
+    // $('th.mostratipoarma').slideUp();
+    // $('td.descricao').slideUp();
 
+    $('a#show_1').click(function()
+    {
+        $(this).find('span').text(function(_, value) 
+        {
+        return value == '-' ? '+' : '-'
+        });
+
+        $('th.mostratipoarma').slideToggle();
+    });
+
+    $('a#show_2').click(function() 
+    {
+        $(this).find('span').text(function(_, value)
+        {
+            return value == '+' ? '-' : '+'
+        });
+
+        $('tr#mostracorpoacorpoleves').slideToggle(100);
+        
+    });
+
+    $('a#show_3').click(function()
+    {
+        $(this).find('span').text(function(_, value)
+        {
+            return value == '+' ? '-' : '+'
+        });
+
+        $('tr#mostracorpoacorpoduasmaos').slideToggle(100);
+
+        if ( $target.closest("td")) {
+            $target.slideToggle();
+        } else {
+            $target.closest("tr").next().find("p").slideToggle();
+        }
+    });
+});
+
+
+    //  );
+    //    $("a[id^=show_]").click(function() 
+    //     {
+    //       $(this).find('span').text(function(_, value) {
+    //   return value == '-' ? '+' : '-'
+    // });
+    //       $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
+    //     });
+ 
 
  
 </script>

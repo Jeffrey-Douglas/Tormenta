@@ -25,145 +25,6 @@
     <h1 class="titulo">Loja</h1>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
-<!-- <script>
-$(document).ready(function() {
-  $('tr:not(.header)').hide();
-
-  $('tr.header').click(function() {
-    $(this).find('span').text(function(_, value) {
-      return value == '-' ? '+' : '-'
-    });
-    
-    $(this).nextUntil('tr.header').slideToggle(100, function() {});
-  });
-});
-
-  </script> -->
-
-
-
-<!-- 
-  <script>
-    $("a[id^=show_]").click(function(event) {
-    $("#extra_" + $(this).attr('id').substr(5)).slideToggle("slow");
-    event.preventDefault();
-})
-  </script> -->
-  <!-- <table>
-    <thead>
-      <tr class="topo">
-        <th class="grupoarma">Armas Simples</th>
-        <th>Preço</th>
-        <th>Dano do item</th>
-        <th>Crítico</th>
-        <th>Distância</th>
-        <th>Peso</th>
-        <th>Tipo do dano [<a id="botaoexpandirdescricao" class="botaoexpandirdescricao" href="#"><span>+</span></a>]</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th class="tipoarma show" colspan="7">Corpo-a-Corpo Leves <a href="#" id="show_2"><span>+</span></a></th>
-      </tr>
-
-
-        <tr class="mostracima">
-          <td class="nomearma">Adaga </td>
-          <td>2 TO</td>
-          <td>1d4</td>
-          <td>19-20 </td>
-          <td>3m</td>
-          <td>0,5 kg</td>
-          <td>Perfuração<a href="#" id="show_3"><span>+</span></a></td>
-        </tr>
-        <tr>
-          <td colspan="7">
-             <div id="extra_3" style="display: none;">   o 'show_"numero"'-'extra_"numero"' aparentemente nao esta funcionando com  "td" mas segue esse caminho q ta dando certo
-             esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
-            (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
-              </div>
-          </td>
-      </tr>
-    <tr class="mostracima">
-      <td class="nomearma" >Ataque desarmado</td>
-      <td>—</td>
-      <td>1d3</td>
-      <td>x2</td>
-      <td>—</td>
-      <td>—</td>
-      <td>Esmagamento <a href="#" id="show_4">+</a></td>
-    </tr>
-    <tr> -->
-      <!-- <td colspan="7">
-          <div id="extra_4" style="display: none;">
-            Você pode atacar com um soco ou chute — 
-            ou qualquer outro golpe que use seu próprio corpo — 
-            como se fosse uma arma de corpo-a-corpo. 
-            No entanto, um ataque desarmado causa apenas dano não letal. 
-            Você pode escolher ataque desarmado para talentos como Foco em Arma
-          </div>
-      </td>
-    </tr>
-    <tr>
-      <th class="tipoarma show" colspan="7">Corpo-a-Corpo Uma Mão</th>
-    </tr>
-    
-    <tr class="mostrab">
-      <td class="nome">Clava</td>
-        <td>—</td>
-        <td>1d6</td>
-        <td>x2</td>
-        <td>—</td>
-        <td>1,5 kg</td>
-        <td>Esmagamento</td>
-      </tr>
-      <tr class="mostrab">
-        <td class="nome">Lança</td>
-        <td>2 TO</td>
-        <td>1d6</td>
-        <td>x2</td>
-        <td>6m</td>
-        <td>1,5 kg</td>
-        <td>Perfuração</td>
-      </tr>
-
-      <thead>
-        <tr class="topo">
-          <th class="grupoarma">Armas Marciais</th>
-          <th>Preço</th>
-          <th>Dano do item</th>
-          <th>Crítico</th>
-          <th>Distância</th>
-          <th>Peso</th>
-          <th>Tipo do dano [<a  id="botaoexpandirdescricaomarcial" class="botaoexpandirdescricao" href="#"><span>+</span></a>]</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th class="tipoarma showb" colspan="7">Corpo-a-Corpo Leves <a href="#" id="show_8"><span>+</span></a></th>
-        </tr>
-            <tr class="mostracima">
-            <td class="nomearma">Adaga </td>
-            <td>2 TO</td>
-            <td>1d4</td>
-            <td>19-20 </td>
-            <td>3m</td>
-            <td>0,5 kg</td>
-            <td>Perfuração<a href="#" id="show_8"><span>+</span></a></td>
-          </tr>
-          <tr>
-            <td colspan="7">
-                <div id="extra_3" style="display: none;">   o 'show_"numero"'-'extra_"numero"' aparentemente nao esta funcionando com  "td" mas segue esse caminho q ta dando certo-->
-                    <!-- esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
-                    (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
-                </div>
-            </td>
-        </tr>
-  
-
-    </tbody>
-  </table>  -->
-
   <script>
 $(document).ready(function()
 {
@@ -172,13 +33,16 @@ $(document).ready(function()
     $('.escondebtn').css("display","none");
     $('.escondeLeves').css("display","none");
   });
-  $('a#botaoExpandirDescricao').click(function()
+  $('tr#botaoExpandirDescricaoSimples').click(function()
   {
-    $(this).find('span').text(function(_, value) 
-    {
-      return value == '-' ? '+' : '-'
-    });
+    // $(this).find('span').text(function(_, value) 
+    // {
+    //   return value == '-' ? '+' : '-'
+    // });
     $('th.showTipoSimples').slideToggle();
+    $('tr.batata').slideToggle();
+    $('th.botaoExpandirDescricao').toggle("active");
+            
   });
   $('th#tipoSimplesLeves').click(function() 
   {
@@ -212,6 +76,7 @@ $(document).ready(function()
      });
     $('tr.showArmaSimplesDistancia').slideToggle();
   });
+
   
    $("a[id^=show_]").click(function() 
    {
@@ -223,24 +88,71 @@ $(document).ready(function()
   });
  });
  
+ $(document).ready(function()
+{
+  $('a#botaoExpandirDescricaoMarciais').click(function()
+  {
+    $(this).find('span').text(function(_, value) 
+    {
+      return value == '-' ? '+' : '-'
+    });
+    $('th.showTipoMarciais').slideToggle();
+  });
+  $('th#tipoMarciaisLeves').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaMarciaisLeves').slideToggle();
+  });
+  $('th#tipoMarciaisUmaMao').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaMarciaisUmaMao').slideToggle();
+  });
+  $('th#tipoMarciaisDuasMaos').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaMarciaisDuasMaos').slideToggle();
+  });
+  $('th#tipoMarciaisDistancia').click(function() 
+  {
+     $(this).find('span').text(function(_, value) 
+     {
+       return value == '-' ? '+' : '-'
+     });
+    $('tr.showArmaMarciaisDistancia').slideToggle();
+  });
+ });
+ 
 
   </script>
-  <button id="fechatudo">fechatudo</button>
+  <!-- remover o /button pra ter uma ideia de como fica o site -->
+  <button id="fechatudo"> fechatudo </button>
     <div>
       <table>
-        <tr>
+        <tr id="botaoExpandirDescricaoSimples">
           <th class="grupoarma" colspan="1">Armas Simples</th>
           <th>Preço</th>
           <th>Dano do item</th>
           <th>Crítico</th>
           <th>Distância</th>
           <th>Peso</th>
-          <th>Tipo do dano [<a id="botaoExpandirDescricao" class="botaoExpandirDescricao"><span>+</span></a>]</th>
+          <th>Tipo do dano <button class="botaoExpandirDescricao"></button>
+            <!-- [<a id="botaoExpandirDescricaoSimples" class="botaoExpandirDescricao"><span>+</span></a>] -->
+          </th>
         </tr>
-        <tr>
-          <th class="tipoarma showTipoSimples" id="tipoSimplesLeves" colspan="7">Corpo-a-Corpo Leves <a><span>+</span></a></th>
+        <tr class="batata">
+          <th  class="tipoarma showTipoSimples" id="tipoSimplesLeves" colspan="7">Corpo-a-Corpo Leves <a><span>+</span></a></th>
         </tr>
-        <tr class="escondebtn showArmaSimplesLeves">
+        <tr class="escondebtn showArmaSimplesLeves barata">
           <td class="nomearma">Adaga </td>
           <td>2 TO</td>
           <td>1d4</td>
@@ -249,31 +161,31 @@ $(document).ready(function()
           <td>0,5 kg</td>
           <td>Perfuração<a   id="show_1"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves barata" id="extra_1">
           <td colspan="7">
-             <div class="escondeLeves" id="extra_1" style="display: none;">
+             <div >
              Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
             (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
               </div>
           </td>
-      </tr>
-          <tr class="escondebtn showArmaSimplesLeves">
-            <td class="nomearma" >Ataque desarmado</td>
-            <td>—</td>
-            <td>1d3</td>
-            <td>x2</td>
-            <td>—</td>
-            <td>—</td>
-            <td>Esmagamento<a   id="show_2"><span>+</span></a></td>
-          </tr>
-          <tr>
-            <td colspan="7">
-               <div class="escondeLeves" id="extra_2" style="display: none;">
-                Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
-                se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
-                Você pode escolher ataque desarmado para talentos como Foco em Arma. 
-              </div>
-            </td>
+        </tr>
+        <tr class="escondebtn showArmaSimplesLeves">
+          <td class="nomearma" >Ataque desarmado</td>
+          <td>—</td>
+          <td>1d3</td>
+          <td>x2</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Esmagamento<a   id="show_2"><span>+</span></a></td>
+        </tr>
+        <tr class="escondeLeves" id="extra_2">
+          <td colspan="7">
+            <div>
+            Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
+            se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
+            Você pode escolher ataque desarmado para talentos como Foco em Arma. 
+            </div>
+          </td>
         </tr>
         <tr class="escondebtn showArmaSimplesLeves">
           <td class="nomearma" >Espada Curta</td>
@@ -284,9 +196,9 @@ $(document).ready(function()
           <td>1 kg</td>
           <td>Perfuração<a   id="show_3"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_3">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_3" style="display: none;">
+              <div>
               é o tipo mais comum de espada, muito usada 
               por soldados, legionários e guardas de milícia — ou como arma 
               secundária. Mede entre 40 e 50cm de comprimento.
@@ -302,9 +214,9 @@ $(document).ready(function()
           <td>1 kg</td>
           <td>Esmagamento<a   id="show_4"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_4">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_4" style="display: none;">
+              <div>
                 Luva metálica que protege a mão e também permite socos mais fortes.
                 Uma armadura completa inclui um par de manoplas. Você não pode ser 
                 desarmado quando usa esta arma 
@@ -323,9 +235,9 @@ $(document).ready(function()
           <td>1,5 kg</td>
           <td>Esmagamento<a   id="show_5"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_5">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_5" style="display: none;">
+              <div>
                 Um pedaço de madeira empunhado como arma,
                 geralmente usado por bárbaros ou criaturas brutais — ou como arma 
                 improvisada, como um galho de árvore ou pedaço de mobília.
@@ -343,9 +255,9 @@ $(document).ready(function()
           <td>1,5 kg</td>
           <td>Perfuração<a   id="show_6"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_6">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_6" style="display: none;">
+              <div>
                 “Lança” é o nome de qualquer arma feita com uma haste de madeira e uma ponta afiada, natural ou metálica. 
                 Por sua facilidade de fabricação, é muito comum entre orcs, kobolds e outras raças menos civilizadas. 
                 Uma lança pode ser arremessada.
@@ -361,9 +273,9 @@ $(document).ready(function()
           <td>6 kg</td>
           <td>Esmagamento<a id="show_8"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr  class="escondeLeves" id="extra_8">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_8" style="display: none;">
+              <div>
                 Bastão metálico com um peso cheio de protuberâncias 
                 na extremidade, a maça é muito usada por clérigos que fazem votos 
                 de não derramar sangue. De fato, um golpe de maça nem sempre
@@ -384,9 +296,9 @@ $(document).ready(function()
           <td>2 kg</td>
           <td>Esmagamento<a   id="show_9"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_9">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_9" style="display: none;">
+              <div>
                 Um cajado apreciado por viajantes e camponeses. 
                 O bordão é uma arma dupla (você pode usá-lo com os talentos Combater com Duas Armas e Bloqueio Ambidestro).
                 O bordão é também uma arma de monge (significa que pode ser usado com 
@@ -403,9 +315,9 @@ $(document).ready(function()
           <td>5 kg</td>
           <td>Perfuração<a   id="show_10"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr  class="escondeLeves" id="extra_10" style="display: none;">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_10" style="display: none;">
+              <div>
                 Essencialmente uma lança muito longa, é a arma perfeita para guardas medrosos, 
                 que não querem ficar perto de seus inimigos. O pique é uma arma de haste.
             </div>
@@ -420,9 +332,9 @@ $(document).ready(function()
           <td>4 kg</td>
           <td>Esmagamento<a id="show_12"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_12">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_12" style="display: none;">
+              <div>
                 Um frasco de vidro contendo um ácido alquímico altamente corrosivo.
                 Você atira o frasco, fazendo um ataque de toque à distância.
                 Se você acertar, o alvo sofre 2d4 pontos de dano de ácido.
@@ -440,9 +352,9 @@ $(document).ready(function()
           <td>0,5 kg</td>
           <td>Ácido<a id="show_13"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_13">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_13" style="display: none;">
+              <div>
                 Versão mais perigosa da clava, maior e/ou com pregos. 
                 Não é uma arma muito elegante, mas faz o serviço.
             </div>
@@ -457,9 +369,9 @@ $(document).ready(function()
           <td>0,5 kg</td>
           <td>Especial<a id="show_14"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_14">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_14" style="display: none;">
+              <div>
                 Criada por clérigos e vendida em pequenos frascos, 
                 a água benta é uma poderosa arma contra mortos-vivos e espíritos Malignos
                 (mas é inofensiva contra outras criaturas). 
@@ -477,9 +389,9 @@ $(document).ready(function()
           <td>1 kg</td>
           <td>Perfuração<a id="show_15"><span>+</span></a></td>
         </tr>
-        <tr>
+        <tr class="escondeLeves" id="extra_15">
           <td colspan="7">
-              <div class="escondeLeves" id="extra_15" style="display: none;">
+              <div >
                 Este arco bastante comum é próprio para caçadas, muito usado por povos selvagens ou caçadores 
                 — o tamanho pequeno é apropriado para manuseio em florestas e outros ambientes fechados.
                 Exige as duas mãos.
@@ -496,9 +408,9 @@ $(document).ready(function()
               <td>75 g</td>
               <td>—<a id="show_16"><span>+</span></a></td>
             </tr>
-            <tr>
+            <tr class="escondeLeves" id="extra_16">
               <td colspan="7">
-                  <div class="escondeLeves" id="extra_16" style="display: none;">
+                  <div>
                     Hastes de madeira com ponta metálica e penas para 
                     estabilizar o voo, flechas são vendidas em unidades ou em aljavas com 20 unidades. 
                     Recarregar um arco com uma flecha é uma ação livre.
@@ -514,9 +426,9 @@ $(document).ready(function()
               <td>1,5 kg</td>
               <td>—<a id="show_17"><span>+</span></a></td>
             </tr>
-            <tr>
+            <tr class="escondeLeves" id="extra_17">
               <td colspan="7">
-                  <div class="escondeLeves" id="extra_17" style="display: none;">
+                  <div>
                     Hastes de madeira com ponta metálica e penas para 
                     estabilizar o voo, flechas são vendidas em unidades ou em aljavas com 20 unidades. 
                     Recarregar um arco com uma flecha é uma ação livre.
@@ -532,9 +444,9 @@ $(document).ready(function()
             <td>1 kg</td>
             <td>Perfuração<a id="show_18"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_18">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_18" style="display: none;">
+                <div>
                   Uma lança leve e flexível, própria para arremesso. 
                   Uma azagaia pode ser usada como uma arma de corpo-a-corpo, 
                   mas você sofre uma penalidade de -4 na jogada de ataque.
@@ -550,9 +462,9 @@ $(document).ready(function()
             <td>3 kg</td>
             <td>Perfuração<a id="show_19"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_19">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_19" style="display: none;">
+                <div>
                   Um arco montado sobre uma coronha de madeira com um gatilho, 
                   a besta leve é uma arma que dispara virotes com grande potência.
                   Recarregar uma besta leve é uma ação de movimento.Exige as duas mãos.
@@ -568,9 +480,9 @@ $(document).ready(function()
             <td>50 g</td>
             <td>—<a id="show_20"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_20">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_20" style="display: none;">
+                <div>
                   Pequenas setas de madeira que servem como munição para bestas.
               </div>
             </td>
@@ -584,9 +496,9 @@ $(document).ready(function()
             <td>0,5 kg</td>
             <td>—<a id="show_21"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_21">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_21" style="display: none;">
+                <div>
                   Pequenas setas de madeira que servem como munição para bestas.
               </div>
             </td>
@@ -600,9 +512,9 @@ $(document).ready(function()
             <td>0,5 kg</td>
             <td>Fogo<a id="show_22"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_22">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_22" style="display: none;">
+                <div>
                   frasco contendo uma substância grossa e pegajosa, que entra em combustão em contato com o ar. 
                   Você atira o frasco, fazendo um ataque de toque à distância (ataque oposto a teste de Reflexos).
                   Se você acertar, o alvo sofre 1d6 pontos de dano e pega fogo.
@@ -621,9 +533,9 @@ $(document).ready(function()
             <td>250 g</td>
             <td>Esmagamento<a id="show_23"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_23">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_23" style="display: none;">
+                <div>
                   uma simples tira de couro usada para arremessar balas 
                   de metal.Na falta de munição adequada, uma funda também pode 
                   disparar pedras comuns, mas odano é reduzido para 1d3. Colocar
@@ -642,9 +554,9 @@ $(document).ready(function()
             <td>200 g</td>
             <td>—<a id="show_24"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_24">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_24" style="display: none;">
+                <div>
                   Fundas atiram pequenas balas esféricas de metal, 
                   que são vendidas em sacos de couro contendo 10 balas por 1 TP ou a unidade por 0,1 TP.
                   Recarregar uma funda com uma bala é uma ação de movimento.
@@ -660,9 +572,9 @@ $(document).ready(function()
             <td>2 kg</td>
             <td>—<a id="show_25"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_25">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_25" style="display: none;">
+                <div>
                   Fundas atiram pequenas balas esféricas de metal, 
                   que são vendidas em sacos de couro contendo 10 balas por 1 TP ou a unidade por 0,1 TP.
                   Recarregar uma funda com uma bala é uma ação de movimento.
@@ -678,9 +590,9 @@ $(document).ready(function()
             <td>0,5 kg</td>
             <td>Fogo<a id="show_26"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_26">
             <td colspan="7">
-                <div class="escondeLeves" id="extra_26" style="display: none;">
+                <div>
                   Popular entre goblins, mas também empregada por outros usuários de pólvora, 
                   esta bomba rudimentar tem um pavio que precisa ser aceso antes do uso (uma ação de movimento). 
                   Faça uma taque à distância. 
@@ -697,101 +609,177 @@ $(document).ready(function()
             <th>Crítico</th>
             <th>Distância</th>
             <th>Peso</th>
-            <th>Tipo do dano</th>
+            <th>Tipo do dano[<a id="botaoExpandirDescricaoMarciais" class="botaoExpandirDescricao"><span>+</span></a>]</th>
           </tr>
           <tr>
-          <th class="tipoarma"colspan="7">Corpo-a-Corpo Leve</th>
-          <tr>
+          <th class="tipoarma showTipoMarciais" id="tipoMarciaisLeves" colspan="7">Corpo-a-Corpo Leve<a  ><span>+</span></a></th>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisLeves">
             <td class="nomearma">Escudo Leve</td>
             <td>5 TO</td>
             <td>1d4</td>
             <td>x2</td>
             <td>—</td>
             <td>3 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_27"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_27">
+            <td colspan="7">
+                <div>
+                  Você pode usar em escudo leve como uma arma, mas perde seu bônus na CA até o próximo turno.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisLeves">
             <td class="nomearma">Machadinha</td>
             <td>6 TO</td>
             <td>1d6</td>
             <td>x3</td>
             <td>3 m</td>
             <td>2 kg</td>
-            <td>Corte
+            <td>Corte<a id="show_28"><span>+</span></a></td>
+          </tr>
+          <tr class="escondeLeves" id="extra_28">
+            <td colspan="7">
+                <div>
+                  Uma ferramenta bem útil para cortar madeira, e também inimigos. Uma machadinha pode ser arremessada.
+              </div>
             </td>
           </tr>
-          <tr>
+          <tr class="escondebtn showArmaMarciaisLeves">
             <td class="nomearma">Martelo</td>
             <td>1 TO</td>
             <td>1d6</td>
             <td>2x</td>
             <td>6 m</td>
             <td>1 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_29"><span>+</span></a></td>
           </tr>
-          <th class="tipoarma" colspan="7">Corpo-a-Corpo Uma Mão</th>
+          <tr class="escondeLeves" id="extra_29">
+            <td colspan="7">
+                <div>
+                  Em sua essência é uma ferramenta para bater pregos, em caso de problemas uma arma pra bater em inimigos.
+                </div>
+            </td>
+          </tr>
           <tr>
+            <th class="tipoarma showTipoMarciais" id="tipoMarciaisUmaMao" colspan="7">Corpo-a-Corpo Uma Mão<a  ><span>+</span></a></th>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Cimitarra</td>
             <td>15 TO</td>
             <td>1d6</td>
             <td>18-20</td>
             <td>—</td>
             <td>2 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_30"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_30">
+            <td colspan="7">
+                <div>
+                  Uma espada com a lâmina curva, leve e muito afiada. O talento Acuidade com Arma se aplica à cimitarra.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Escudo Pesado</td>
             <td>15 TO</td>
             <td>1d6</td>
             <td>x2</td>
             <td>—</td>
             <td>7 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_31"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_31">
+            <td colspan="7">
+                <div>
+                  Você pode usar em escudo pesado como uma arma, mas perde seu bônus na CA até o próximo turno.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Espada Longa</td>
             <td>15 TO</td>
             <td>1d8</td>
             <td>19-20</td>
             <td>—</td>
             <td>2 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_32"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_32">
+            <td colspan="7">
+                <div>
+                  Arma típica de guerreiros humanos, mas também extremamente comum entre elfos. 
+                  Esta espada de dois gumes tem lâmina reta medindo entre 85 cm a 1,15 m de comprimento total e peso entre 0,9 kg e 1,5 kg.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Florete</td>
             <td>20 TO</td>
             <td>1d6</td>
             <td>x3</td>
             <td>—</td>
             <td>1 kg</td>
-            <td>Perfuração</td>
+            <td>Perfuração<a id="show_33"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_33">
+            <td colspan="7">
+                <div>
+                  Com uma lâmina fina e afiada, esta espada se torna muito precisa. O talento Acuidade com arma se aplica ao florete.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Machado de Batalha</td>
             <td>10 TO</td>
             <td>1d8</td>
             <td>x3</td>
             <td>—</td>
             <td>3 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_34"><span>+</span></a></td>
           </tr>
-          <tr>
-            <td class="nomearma">Mangal</td>
+          <tr class="escondeLeves" id="extra_34">
+            <td colspan="7">
+                <div>
+                  Diferente de uma machadinha, este não é um simples instrumento para cortes de árvores,
+                  mas sim uma poderosa arma capaz de causar ferimentos terríveis.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
+            <td class="nomearma">Mangual</td>
             <td>8 TO</td>
             <td>1d8</td>
             <td>x2</td>
             <td>—</td>
             <td>2,5 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_35"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_35">
+            <td colspan="7">
+                <div>
+                  Diferente de uma machadinha, este não é um simples instrumento para cortes de árvores,
+                  mas sim uma poderosa arma capaz de causar ferimentos terríveis.
+                </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaMarciaisUmaMao">
             <td class="nomearma">Martelo de guerra</td>
             <td>12 TO</td>
             <td>1d8</td>
             <td>x3</td>
             <td>—</td>
             <td>2,5 kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_36"><span>+</span></a></td>
+          </tr>
+          <tr class="escondeLeves" id="extra_36">
+            <td colspan="7">
+                <div>
+                  Diferente de uma machadinha, este não é um simples instrumento para cortes de árvores,
+                  mas sim uma poderosa arma capaz de causar ferimentos terríveis.
+                </div>
+            </td>
           </tr>
           <tr>
             <td class="nomearma">Picareta</td>

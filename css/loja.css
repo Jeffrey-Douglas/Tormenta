@@ -3,7 +3,7 @@ table {
     border-collapse: collapse;
     width: 100%;
   }
-  
+
   td, th {
     border-left: 1px solid #dddddd; /* mesma cor do nth-child */
     border-right: 1px solid #dddddd;
@@ -30,25 +30,43 @@ height: 40px;
   div#extra_1{
     text-align: left;
   }
-  
+
   th.tipoarma{
   text-align: center;
   display: none;
 }
 
-tr.showArmaSimplesLeves, 
-tr.showArmaSimplesUmaMao, 
-tr.showArmaSimplesDuasMaos, 
-tr.showArmaSimplesDistancia, 
+tr.showArmaSimplesLeves,
+tr.showArmaSimplesUmaMao,
+tr.showArmaSimplesDuasMaos,
+tr.showArmaSimplesDistancia,
 div.escondeSimplesLeves,
 tr.showTipoSimplesLeves,
 tr.showTipoSimplesUmaMao,
 tr.showTipoSimplesDuasMaos,
-tr.showTipoSimplesDistancia{
+tr.showTipoSimplesDistancia,
+tr.showArmaMarciaisLeves,
+tr.showArmaMarciaisUmaMao,
+tr.showArmaMarciaisDuasMaos,
+tr.showArmaMarciaisDistancia,
+tr.showTipoMarciaisLeves,
+tr.showTipoMarciaisUmaMao,
+tr.showTipoMarciaisDuasMaos,
+tr.showTipoMarciaisDistancia{
   display: none;
 }
-
-
+.botaoExpandirDescricao:after{
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+/* //////////////////////////////////////////////// */
+.active:after {
+  content: "\2212";
+}
+/* //////////////////////////////////////////////// */
   tr:nth-child(even) {
     background-color: #dddddd;
     border: solid #dddddd;
@@ -57,7 +75,7 @@ tr.showTipoSimplesDistancia{
   td {
     text-align: center;
   }
-  
+
   td.nomearma{
     text-align: left;
   }
@@ -69,3 +87,11 @@ a {
   text-decoration: none;
   color: #0645ad;
   background: none;}
+
+.batata {
+  display: none;
+}
+.escondeLeves {
+  background-color: violet;
+  display: none;
+}
