@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="shortcut icon" href="../imagens/Fav-icon.webp" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tudo de Tormenta</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/loja.css">
+  <script src="../js/Loja.js"></script>
+  <header>
+    <ul class="cabecalho">
+      <li class="sobe"><a href="/index.html">Tudo de Tormenta</a></li>
+      <li class="sobe"><a href="https://jeffrey-douglas.github.io/Tormenta/">Site TTD</a></li>      <li class="sobe"><a href="criadordepersonagem.html">Criador de Presonagens</a></li>
+      <li class="sobe"><a href="download.html">Downloads</a></li>
+      <li class="sobe"><a href="grimorio.html">Grimório</a></li>
+      <li class="sobe"><a href="loja.html">Loja</a></li>
+      <li class="sobe"><a href="regrasdacasa.html">Regras da Casa</a> </li>
+      <li class="sobe"><a href="talentos.html">Talentos</a></li>
+    </ul>
+  </header>
+</head>
+<body>
+    <h1 class="titulo">Loja</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+<!--     
+    <style>
+        .collapsible {
+          background-color: #777;
+          color: white;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+        }
+        
+        .active, .collapsible:hover {
+          background-color: #555;
+        }
+        .collapsible:after {
+          content: '\002B';
+          color: white;
+          font-weight: bold;
+          float: right;
+          margin-left: 5px;
+        }
+        
+        .active:after {
+          content: "\2212";
+        }
+        
+        .content {
+          padding: 0 18px;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+          background-color: #f1f1f1;
+        }
+        </style> -->
+
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-6">
+    <table class="table table-striped jambo_table">
+      <thead>
+        <tr class="headings">
+          <th>
+            <h4>Main Cat</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+        </tr>
+        <tr class="escondebtn showArmaSimplesLeves">
+          <td class="nomearma">Adaga </td>
+          <td>2 TO</td>
+          <td>1d4</td>
+          <td>19-20 </td>
+          <td>3m</td>
+          <td>0,5 kg</td>
+          <td>Perfuração<a   id="show_1">    <button type="button" class="btn btn-info btn-expand">+</button></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+             <div class="escondeLeves" id="extra_1" style="display: none;">
+             Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+            (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
+              </div>
+          </td>
+        </tr>
+        <tr class="escondebtn showArmaSimplesLeves">
+          <td class="nomearma" >Ataque desarmado</td>
+          <td>—</td>
+          <td>1d3</td>
+          <td>x2</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Esmagamento<a   id="show_2"><span>+</span></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+            <div class="escondeLeves" id="extra_2" style="display: none;">
+            Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
+            se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
+            Você pode escolher ataque desarmado para talentos como Foco em Arma. 
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>10</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-info btn-expand">+</button>
+  </div>
+  
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  $('.table').each(function () {
+    // $(this).find('tr').hide();
+  });
+  
+  $('.btn-expand').click(function () {
+    var $btn = $(this);
+    var $rows = $btn.prev('.table').find('tr');
+    
+    if ($btn.text() === '+') {
+      $rows.show();
+      $btn.text('-');
+    } else {
+      $rows.slice(7).hide();
+      $btn.text('+');
+    }
+  });
+</script> -->
+<!-- <button type="button" class="collapsible">First Collapsible</button>
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  
+  <button type="button" class="collapsible">Second Collapsible</button>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+  <button type="button" class="collapsible">Third Collapsible</button>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <tr class="collapsible">
+      <td class="nomearma">Adaga </td>
+      <td>2 TO</td>
+      <td>1d4</td>
+      <td>19-20 </td>
+      <td>3m</td>
+      <td>0,5 kg</td>
+      <td>Perfuração<a   id="show_1">    <button type="button" class="btn btn-info btn-expand">+</button></a></td>
+    </tr>
+    <tr>
+      <td colspan="7">
+         <div class="escondeLeves" id="extra_1" style="display: none;">
+         Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+        (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
+          </div>
+      </td>
+    </tr>
+    <tr class="escondebtn showArmaSimplesLeves">
+      <td class="nomearma" >Ataque desarmado</td>
+      <td>—</td>
+      <td>1d3</td>
+      <td>x2</td>
+      <td>—</td>
+      <td>—</td>
+      <td>Esmagamento<a   id="show_2"><span>+</span></a></td>
+    </tr>
+    <tr>
+      <td colspan="7">
+        <div class="escondeLeves" id="extra_2" style="display: none;">
+        Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
+        se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
+        Você pode escolher ataque desarmado para talentos como Foco em Arma. 
+        </div>
+      </td>
+    </tr>
+
+
+</div> -->
+
+
+<!-- <script>
+  var allHeights = 0;
+var contents = document.getElementsByClassName("content");
+var j;
+
+for (j = 0; j < contents.length; j++) {
+  var h = document.getElementsByClassName("content")[j].scrollHeight;
+  allHeights += h;
+}
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight == allHeights + "px"){
+      content.style.maxHeight = "0px";
+    } else {
+      content.style.maxHeight = allHeights + "px";
+    }
+  });
+}
+
+</script>
+<style>
+  .collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style> -->
+
+<!-- <style>
+
+  .collapseButton {
+    vertical-align: text-top;
+  }
+  
+  th, td {
+    padding: 1em;
+  }
+  
+  #hidden {
+    display: none;
+  }
+  
+  .Table {
+    margin-left: 12em;
+    margin-top: 1em;
+    margin-right: 1em;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+table tr:nth-child(even) {
+  background-color: #5873C1;
+  color: white;
+}
+
+table tr:nth-child(odd) {
+  background-color: #3756B1;
+  color: white;
+}
+
+table th {
+  background-color: #092168;
+}
+
+table th, td {
+  padding: 1em;
+  text-align: center;
+}
+
+#collapseButton:hover {
+  background-color: #092168;
+}
+</style>
+
+<script>
+
+  function collapse(cell){
+    var row = cell.parentElement;
+    var target_row = row.parentElement.children[row.rowIndex + 1];
+    if (target_row.style.display == 'table-row') {
+      cell.innerHTML = '+';
+      target_row.style.display = 'none';
+    } else {
+      cell.innerHTML = '-';
+      target_row.style.display = 'table-row';
+    }
+  }
+  </script>
+<table>
+  <tr id="collapseButton" onclick="collapse(this)">
+    <th class="" colspan="1">Armas Simples</th>
+    <th>Preço</th>
+    <th>Dano do item</th>
+    <th>Crítico</th>
+    <th>Distância</th>
+    <th>Peso</th>
+    <th id="collapseButton" onclick="collapse(this)">Tipo do dano</th>
+    
+  </tr>
+  <tr class="collapsible">
+    <td class="nomearma">Adaga </td>
+    <td>2 TO</td>
+    <td>1d4</td>
+    <td>19-20 </td>
+    <td>3m</td>
+    <td>0,5 kg</td>
+    <td>Perfuração <a   id="show_2"><span>+</span></a></td>
+  </tr>
+  <tr>
+    <td colspan="7">
+       <div class="escondeLeves" id="extra_1" style="display: none;">
+       Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+      (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
+        </div>
+    </td>
+  </tr>
+  <tr class="escondebtn showArmaSimplesLeves">
+    <td class="nomearma" >Ataque desarmado</td>
+    <td>—</td>
+    <td>1d3</td>
+    <td>x2</td>
+    <td>—</td>
+    <td>—</td>
+    <td>Esmagamento<a   id="show_2"><span>+</span></a></td>
+  </tr>
+  <tr>
+    <td colspan="7">
+      <div class="escondeLeves" id="extra_2" style="display: none;">
+      Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
+      se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
+      Você pode escolher ataque desarmado para talentos como Foco em Arma. 
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Serial Number</th>
+    <th>Email Address</th>
+  </tr>
+  <tr>
+    <td id="collapseButton" onclick="collapse(this)">+</td>
+    <td>James Tiberius Kirk</td>
+    <td>SC937-0176CEC</td>
+    <td>jtkirk@enterprise.starfleet.org</td>
+  </tr>
+  <tr id="hidden">
+    <td></td>
+    <td colspan=3>
+        <table>
+          <tr>
+            <th></th>
+            <th>DOB</th>
+            <th>Country</th>
+          </tr>
+          <tr>
+            <td id="collapseButton" onclick="collapse(this)">+</td>
+            <td>March 22, 2233</td>
+            <td>USA</td>
+          </tr>
+          <tr id="hidden">
+            <td></td>
+            <td colspan=2>
+              <table>
+                <tr>
+                  <th>Mother</th>
+                  <th>Father</th>
+                </tr>
+                <tr>
+                  <td>Winona Kirk</td>
+                  <td>George Kirk</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+  <tr>
+    <td id="collapseButton" onclick="collapse(this)">+</td>
+    <td>Jean-Luc Picard</td>
+    <td>SP 937-215</td>
+    <td>jlpicard@enterprise-E.starfleet.org</td>
+  </tr>
+  <tr id="hidden">
+    <td></td>
+    <td colspan=3>
+        <table>
+          <tr>
+            <th></th>
+            <th>DOB</th>
+            <th>Country</th>
+          </tr>
+          <tr>
+            <td id="collapseButton" onclick="collapse(this)">+</td>
+            <td>July 23, 2305</td>
+            <td>France</td>
+          </tr>
+          <tr id="hidden">
+            <td></td>
+            <td colspan=2>
+              <table>
+                <tr>
+                  <th>Mother</th>
+                  <th>Father</th>
+                </tr>
+                <tr>
+                  <td>Yvette Gessard</td>
+                  <td>Maurice Picard</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table> -->
+
+<!-- <table>
+    <div>
+      
+        <tr id="" class="">
+          <th class="grupoarma" colspan="1">Armas Simples</th>
+          <th>Preço</th>
+          <th>Dano do item</th>
+          <th>Crítico</th>
+          <th>Distância</th>
+          <th>Peso</th>
+          <th>Tipo do dano</th>
+        </tr>
+        <tr>
+          <th class="" id="" colspan="7">Corpo-a-Corpo Leves<span class="icon downArrow table2" table-id="table2_1" node-type='children' onclick="toggleTable()"></span></th>
+        </tr>
+        <tr class="">
+          <td class="nomearma">Adaga </td>
+          <td>2 TO</td>
+          <td>1d4</td>
+          <td>19-20 </td>
+          <td>3m</td>
+          <td>0,5 kg</td>
+          <td>Perfuração<span class="icon upArrow" table-id="table2" node-type='parent' onclick="toggleTable()"></span></td></td>
+        </tr>
+        <tr>
+          <td colspan="7" class="table2">
+
+             Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+            (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
+
+          </td>
+        </tr>
+
+  <tr>
+    <th>Não Importa</th>
+    <th colspan="3">Não Importa</th>
+  </tr>
+  <tr>
+    <td>1.</td>
+    <td colspan="3"><span>Não Importa</span></td>
+  </tr>
+  <tr>
+    <td>2.</td>
+    <td colspan="3"><span>DEF</span><span class="icon upArrow" table-id="table2" node-type='parent' onclick="toggleTable()"></span></td>
+  </tr>
+  <tr class="table2">
+    <th class="grayFill" colspan="4"><span>Locations</span><span class="icon downArrow table2" table-id="table2_1" node-type='children' onclick="toggleTable()"></span></th>
+  </tr>
+  <tr class="table2 table2_1">
+    <th>locations 0</th>
+    <th>locations 0</th>
+    <th>locations 0</th>
+    <th>locations 0</th>
+  </tr>
+  <tr class="table2 table2_1">
+    <td>locations 1</td>
+    <td>locations 1</td>
+    <td>locations 1</td>
+    <td>locations 1</td>
+  </tr>
+  <tr class="table2 table2_1">
+    <td>locations 2</td>
+    <td>locations 2</td>
+    <td>locations 2</td>
+    <td>locations 2</td>
+  </tr>
+  <tr class="table2">
+    <th class="grayFill" colspan="4"><span>Nested Table 2</span><span class="icon downArrow table2" table-id="table2_2" node-type='children' onclick="toggleTable()"></span></th>
+  </tr>
+  <tr class="table2 table2_2">
+    <th colspan='2'>Pincode</th>
+    <th colspan='2'>Country</th>
+  </tr>
+  <tr class="table2 table2_2">
+    <td colspan='2'>400076</td>
+    <td colspan='2'>India</td>
+  </tr>
+  <tr class="table2 table2_2">
+    <td colspan='2'>123456</td>
+    <td colspan='2'>India</td>
+  </tr>
+  <tr>
+    <td>3.</td>
+    <td colspan="3"><span>XYZ</span></td>
+  </tr>
+</table>
+<style>
+  table {
+  border-collapse: collapse;
+  width: 300px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  position: relative;
+}
+
+.grayFill {
+  background: lightgray;
+}
+
+span {
+  position: relative;
+  display: inline-block;
+}
+
+.icon {
+  position: absolute;
+  cursor: pointer;
+  right: 10px;
+  border: 5px solid;
+}
+
+.upArrow {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: black;
+  border-top-color: transparent;
+  width: 0;
+  height: 0;
+  top: 2px;
+}
+
+.downArrow {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: black;
+  width: 0;
+  height: 0;
+  top: 8px;
+}
+
+</style>
+<script>
+function toggleTable() {
+    var tableId, elements, objectType, display, targetElement;
+    targetElement = event.target;
+    tableId = targetElement.getAttribute('table-id');
+    elements = document.getElementsByClassName(tableId);
+    objectType = targetElement.getAttribute('node-type');
+    display = '';
+    if (targetElement.classList.contains('downArrow')) {
+        targetElement.classList.remove('downArrow');
+        targetElement.classList.add('upArrow');
+        display = '';
+    } else {
+        targetElement.classList.remove('upArrow');
+        targetElement.classList.add('downArrow');
+        display = 'none';
+    }
+    for (var index = 0; index < elements.length; index++) {
+        if (objectType === 'parent') {
+            elements[index].style.display = display;
+        } else {
+            if (elements[index].style.display === 'none') {
+                elements[index].style.display = '';
+            } else {
+                elements[index].style.display = 'none';
+            }
+        }
+    }
+    targetElement.style.display = ''; -->
+
+
+    <!-- <div>
+      <table>
+        <tr id="">
+          <th colspan="1">Armas Simples</th>
+          <th>Preço</th>
+          <th>Dano do item</th>
+          <th>Crítico</th>
+          <th>Distância</th>
+          <th>Peso</th>
+          <th>Tipo do dano <a class="btn-expand"><span>+</span></a></td>
+             [<a id="botaoExpandirDescricaoSimples" class="botaoExpandirDescricao"><span>+</span></a>] -->
+          <!-- </th>
+        </tr>
+        
+          <th class=" " id="" colspan="7">Corpo-a-Corpo Leves <a><span>+</span></a></th>
+        
+        <tr class="">
+          <td class="">Adaga </td>
+          <td>2 TO</td>
+          <td>1d4</td>
+          <td>19-20 </td>
+          <td>3m</td>
+          <td>0,5 kg</td>
+          <td>Perfuração<a   class="btn-expand"><span>+</span></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+             <div class="" id="" style="display: none;">
+             Esta faca afiada é muito usada por ladrões e assassinos, por ser facilmente escondida 
+            (fornece +4 em testes de Ladinagem para escondê-la). Uma adaga também pode ser arremessada.
+              </div>
+          </td>
+        </tr>
+        <tr class="">
+          <td class="" >Ataque desarmado</td>
+          <td>—</td>
+          <td>1d3</td>
+          <td>x2</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Esmagamento<a   id=""><span>+</span></a></td>
+        </tr>
+        <tr>
+          <td colspan="7">
+            <div class="" id="" style="display: none;">
+            Você pode atacar com um soco ou chute — ou qualquer outro golpe que use seu próprio corpo — como 
+            se fosse uma arma de corpo-a-corpo. No entanto, um ataque desarmado causa apenas dano não letal. 
+            Você pode escolher ataque desarmado para talentos como Foco em Arma. 
+            </div>
+          </td>
+        </tr>
+<script>
+    $('.btn-expand').click(function () {
+    var botao = $(this);
+    var $rows = botao.prev('.table').find('tr');
+    
+    if (botao.text() === '+') {
+      $rows.show();
+      botao.text('-');
+    } else {
+      $rows.slice(7).hide();
+      botao.text('+');
+    }
+  });  -->
+
+
+
+
+
+  
+</script>
+
+</body>
+</html>
