@@ -179,6 +179,9 @@ $(document).ready(function()
   </script>
   <!-- remover o /button pra ter uma ideia de como fica o site -->
   <button id="fechatudo"> fechatudo </button>
+  <p>Buscar Item:</p>
+    <input type="text" name="BuscaArma">
+    <button type="submit"><i class="fa-search"></i></button>
     <div>
       <table>
         <tr>
@@ -1136,55 +1139,111 @@ $(document).ready(function()
           <tr>
             <th class="tipoarma showTipoExoticas" id="tipoExoticasUmaMao" colspan="7">Corpo-a-Corpo Uma Mão<a><span>+</span></a></th>
           </tr>
-          <tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Chicote</td>
             <td>1 TO</td>
             <td>1d3</td>
             <td>x2</td>
             <td>—</td>
             <td>1 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_54"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_54">
+            <td colspan="7">
+              <div>
+                Você pode atacar um inimigo a até 4,5m com um chicote.
+                Esta arma pode se enroscar nas mãos, pernas ou armas do adversário;
+                você recebe +4 em jogadas de ataque para derrubar ou desarmar.
+                O talento Acuidade com Arma se aplica ao chicote.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Espada bastarda</td>
             <td>35 TO</td>
             <td>1d10</td>
             <td>19-20</td>
             <td>—</td>
             <td>3 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_55"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_55">
+            <td colspan="7">
+              <div>
+                Maior e mais pesada que a espada longa, 
+                esta poderosa espada é usada por cavaleiros para vencer a proteção
+                de uma armadura completa. Uma espada bastarda é muito grande 
+                para ser usada com uma só mão sem treinamento especial; por isso 
+                é uma arma exótica. Ela pode ser usada como uma arma marcial de duas mãos.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Katana</td>
             <td>400TO </td>
             <td>1d10 </td>
             <td>19-20 </td>
             <td>— </td>
             <td>3kg </td>
-            <td>Corte</td>
+            <td>Corte<a id="show_56"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_56">
+            <td colspan="7">
+              <div>
+                A espada tradicional do samurai tem lâmina levemente curva e apenas um gume. 
+                É muito grande para ser usada com uma só mão sem treinamento especial; por isso é uma arma exótica.
+                Ela pode ser usada como uma arma marcial de duas mãos. 
+                O talento Acuidade com Arma se aplica à katana.
+                Cada katana é uma obra de arte única, com entalhes no cabo, guarda e lâmina. 
+                Por seu extremo acabamento, uma katana é sempre considerada uma arma obra-prima (seu custo já inclui esta qualidade), oferecendo +1 nas jogadasde ataque.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Machado anão</td>
             <td>30 TO</td>
             <td>1d10</td>
             <td>x3</td>
             <td>—</td>
             <td>4 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_57"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_57">
+            <td colspan="7">
+              <div>
+                Este poderoso machado é a arma preferida por onze entre dez guerreiros anões.
+                Um machado anão é muito grande para ser usado com uma só mão sem treinamento especial;
+                por isso é uma arma exótica. 
+                Ele pode ser usado como uma arma marcial de duas mãos.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Sabre serrilhado</td>
             <td>500 TO</td>
             <td>1d8</td>
             <td>19-20/especial</td>
             <td>—</td>
             <td>2 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_58"><span>+</span></a></td>
+          </tr>
+          <tr class="escondeLeves" id="extra_58">
+            <td colspan="7">
+              <div>
+                Esta é uma arma cruel, de lâmina parecida com um serrote.
+                Causa grande estrago quando atinge a carne, rasgando e destroçando.
+                Devido a seus “dentes”, é comum que fique profundamente entrelaçada nas costelas (ou órgãos equivalentes).
+                Após um acerto crítico, em vez de causar dano multiplicado, 
+                o sabre fica preso — e requer uma ação de movimento para ser arrancado. 
+                Esse ato causa à vítima 1d6 pontos de dano adicional.
+                Caso não seja removida, a arma causa 1d6 pontos de dano para cada ação padrão ou ação completa realizada pela vítima.
+              </div>
+            </td>
           </tr>
           <tr>
             <th class="tipoarma showTipoExoticas" id="tipoExoticasDuasMaos" colspan="7">Corpo-a-Corpo Duas Mãos<a><span>+</span></a></th>
           </tr>
-          <tr>
+          <tr> class="escondebtn showArmaExoticasLeves"
             <td class="nomearma">Corrente com cravos</td>
             <td>25 TO</td>
             <td>2d4</td>
@@ -1193,7 +1252,7 @@ $(document).ready(function()
             <td>5 kg</td>
             <td>Perfuração</td>
           </tr>
-          <tr>
+          <tr> class="escondebtn showArmaExoticasLeves"
             <td class="nomearma">Espada de duas lâminas</td>
             <td>100 TO</td>
             <td>1d8/1d8</td>
@@ -1202,7 +1261,7 @@ $(document).ready(function()
             <td>5 kg</td>
             <td>Corte</td>
           </tr>
-          <tr>
+          <tr> class="escondebtn showArmaExoticasLeves"
             <td class="nomearma">Espada táurica</td>
             <td>50 TO</td>
             <td>2d8</td>
@@ -1211,7 +1270,7 @@ $(document).ready(function()
             <td>7,5kg</td>
             <td>Corte</td>
           </tr>
-          <tr>
+          <tr> class="escondebtn showArmaExoticasLeves"
             <td class="nomearma">Marreta estilhaçadora</td>
             <td>50 TO</td>
             <td>1d12</td>
@@ -1223,7 +1282,7 @@ $(document).ready(function()
           <tr>
             <th class="tipoarma showTipoExoticas" id="tipoExoticasDistancia" colspan="7">Ataque à Distância<a><span>+</span></a></th>
           </tr>
-          <tr>
+          <tr> class="escondebtn showArmaExoticasLeves"
             <td class="nomearma">Mosquete</td>
             <td>500 TO</td>
             <td>2d8</td>
