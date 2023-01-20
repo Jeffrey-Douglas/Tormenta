@@ -179,6 +179,9 @@ $(document).ready(function()
   </script>
   <!-- remover o /button pra ter uma ideia de como fica o site -->
   <button id="fechatudo"> fechatudo </button>
+  <p>Buscar Item:</p>
+    <input type="text" name="BuscaArma">
+    <button type="submit"><i class="fa-search"></i></button>
     <div>
       <table>
         <tr>
@@ -1136,174 +1139,351 @@ $(document).ready(function()
           <tr>
             <th class="tipoarma showTipoExoticas" id="tipoExoticasUmaMao" colspan="7">Corpo-a-Corpo Uma Mão<a><span>+</span></a></th>
           </tr>
-          <tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Chicote</td>
             <td>1 TO</td>
             <td>1d3</td>
             <td>x2</td>
             <td>—</td>
             <td>1 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_54"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_54">
+            <td colspan="7">
+              <div>
+                Você pode atacar um inimigo a até 4,5m com um chicote.
+                Esta arma pode se enroscar nas mãos, pernas ou armas do adversário;
+                você recebe +4 em jogadas de ataque para derrubar ou desarmar.
+                O talento Acuidade com Arma se aplica ao chicote.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Espada bastarda</td>
             <td>35 TO</td>
             <td>1d10</td>
             <td>19-20</td>
             <td>—</td>
             <td>3 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_55"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_55">
+            <td colspan="7">
+              <div>
+                Maior e mais pesada que a espada longa, 
+                esta poderosa espada é usada por cavaleiros para vencer a proteção
+                de uma armadura completa. Uma espada bastarda é muito grande 
+                para ser usada com uma só mão sem treinamento especial; por isso 
+                é uma arma exótica. Ela pode ser usada como uma arma marcial de duas mãos.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Katana</td>
             <td>400TO </td>
             <td>1d10 </td>
             <td>19-20 </td>
             <td>— </td>
             <td>3kg </td>
-            <td>Corte</td>
+            <td>Corte<a id="show_56"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_56">
+            <td colspan="7">
+              <div>
+                A espada tradicional do samurai tem lâmina levemente curva e apenas um gume. 
+                É muito grande para ser usada com uma só mão sem treinamento especial; por isso é uma arma exótica.
+                Ela pode ser usada como uma arma marcial de duas mãos. 
+                O talento Acuidade com Arma se aplica à katana.
+                Cada katana é uma obra de arte única, com entalhes no cabo, guarda e lâmina. 
+                Por seu extremo acabamento, uma katana é sempre considerada uma arma obra-prima (seu custo já inclui esta qualidade), oferecendo +1 nas jogadasde ataque.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Machado anão</td>
             <td>30 TO</td>
             <td>1d10</td>
             <td>x3</td>
             <td>—</td>
             <td>4 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_57"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_57">
+            <td colspan="7">
+              <div>
+                Este poderoso machado é a arma preferida por onze entre dez guerreiros anões.
+                Um machado anão é muito grande para ser usado com uma só mão sem treinamento especial;
+                por isso é uma arma exótica. 
+                Ele pode ser usado como uma arma marcial de duas mãos.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasUmaMao">
             <td class="nomearma">Sabre serrilhado</td>
             <td>500 TO</td>
             <td>1d8</td>
             <td>19-20/especial</td>
             <td>—</td>
             <td>2 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_58"><span>+</span></a></td>
+          </tr>
+          <tr class="escondeLeves" id="extra_58">
+            <td colspan="7">
+              <div>
+                Esta é uma arma cruel, de lâmina parecida com um serrote.
+                Causa grande estrago quando atinge a carne, rasgando e destroçando.
+                Devido a seus “dentes”, é comum que fique profundamente entrelaçada nas costelas (ou órgãos equivalentes).
+                Após um acerto crítico, em vez de causar dano multiplicado, 
+                o sabre fica preso — e requer uma ação de movimento para ser arrancado. 
+                Esse ato causa à vítima 1d6 pontos de dano adicional.
+                Caso não seja removida, a arma causa 1d6 pontos de dano para cada ação padrão ou ação completa realizada pela vítima.
+              </div>
+            </td>
           </tr>
           <tr>
             <th class="tipoarma showTipoExoticas" id="tipoExoticasDuasMaos" colspan="7">Corpo-a-Corpo Duas Mãos<a><span>+</span></a></th>
           </tr>
-          <tr>
+          <tr class="escondebtn showArmaExoticasDuasMaos">
             <td class="nomearma">Corrente com cravos</td>
             <td>25 TO</td>
             <td>2d4</td>
             <td>x2</td>
             <td>—</td>
             <td>5 kg</td>
-            <td>Perfuração</td>
+            <td>Perfuração<a id="show_59"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_59">
+            <td colspan="7">
+              <div>
+                Você pode atacar um inimigo a até 4,5m com uma corrente com cravos. 
+                Esta arma pode se enroscar nas mãos, pernas ou armas do adversário; 
+                você recebe +4 em jogadas de ataque para derrubar ou desarmar.
+                O talento Acuidade com Arma se aplica à corrente comcravos.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasDuasMaos">
             <td class="nomearma">Espada de duas lâminas</td>
             <td>100 TO</td>
             <td>1d8/1d8</td>
             <td>19-20</td>
             <td>—</td>
             <td>5 kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_60"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_60">
+            <td colspan="7">
+              <div>
+                Duas espadas longas, presas em lados opostos de um mesmo cabo. É uma arma dupla.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasDuasMaos">
             <td class="nomearma">Espada táurica</td>
             <td>50 TO</td>
             <td>2d8</td>
             <td>x2</td>
             <td>—</td>
             <td>7,5kg</td>
-            <td>Corte</td>
+            <td>Corte<a id="show_61"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_61">
+            <td colspan="7">
+              <div>
+                Esta espada gigantesca é usada pelos maiores campeões e gladiadores de Tapista. 
+                Além do talento Usar Arma Exótica, também exige Força 15 ou mais para ser manuseada.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasDuasMaos">
             <td class="nomearma">Marreta estilhaçadora</td>
             <td>50 TO</td>
             <td>1d12</td>
             <td>19-20/especial</td>
             <td>—</td>
             <td>7kg</td>
-            <td>Esmagamento</td>
+            <td>Esmagamento<a id="show_62"><span>+</span></a></td>
+          </tr>
+          <tr class="escondeLeves" id="extra_62">
+            <td colspan="7">
+              <div>
+                Este grande e desajeitado martelo de guerra é pouco eficaz em combate normal.
+                Com cabo longo e uma imensa cabeça de metal, 
+                a marreta estilhaçadora conta com uma superfície de impacto larga,
+                incapaz de causar muito dano real. 
+                Sua verdadeira função é despedaçar armaduras e carapaças de monstros — especialmente demônios da Tormenta.
+              </div>
+            </td>
           </tr>
           <tr>
             <th class="tipoarma showTipoExoticas" id="tipoExoticasDistancia" colspan="7">Ataque à Distância<a><span>+</span></a></th>
           </tr>
-          <tr>
+          <tr class="escondebtn showArmaExoticasDistancia"> 
             <td class="nomearma">Mosquete</td>
             <td>500 TO</td>
             <td>2d8</td>
             <td>19-20/x3</td>
             <td>45 m</td>
             <td>5 kg</td>
-            <td>Perfuração</td>
+            <td>Perfuração<a id="show_63"><span>+</span></a></td>
           </tr>
-              <tr>
+          <tr class="escondeLeves" id="extra_63">
+            <td colspan="7">
+              <div>
+                É uma arma de uso complicado, rejeitada pela maioria dos guerreiros, 
+                mas devastadora quando atinge o alvo.
+                Recarregar um mosquete é uma ação padrão. Exige as duas mãos.
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasDistancia">
                 <td class="municao">Munição</td>
                 <td>5 TO</td>
                 <td>—</td>
                 <td>—</td>
                 <td>—</td>
                 <td>5 kg</td>
-                <td>Perfuração</td>
+                <td>—<a id="show_64"><span>+</span></a></td>
               </tr>
-              <tr>
+              <tr class="escondeLeves" id="extra_64">
+                <td colspan="7">
+                  <div>
+                    Inclui uma bolsa com balas (pequenas esferas de chumbo) 
+                    e pólvora para tiros de mosquete ou pistola vendiadas com 10 balas por 50 TO ou com 1 por 5 TO.
+                    Recarregar um mosquete ou pistola é uma ação padrão.
+                  </div>
+                </td>
+              </tr>
+              <tr class="escondebtn showArmaExoticasDistancia">
                 <td class="municao">Munições (10)</td>
                 <td>50 TO</td>
                 <td>—</td>
                 <td>—</td>
                 <td>—</td>
                 <td>0,5 kg</td>
-                <td>—</td>
+                <td>—<a id="show_65"><span>+</span></a></td>
               </tr>
-          <tr>
+              <tr class="escondeLeves" id="extra_65">
+                <td colspan="7">
+                  <div>
+                    Inclui uma bolsa com balas (pequenas esferas de chumbo) 
+                    e pólvora para tiros de mosquete ou pistola vendiadas com 10 balas por 50 TO ou com 1 por 5 TO.
+                    Recarregar um mosquete ou pistola é uma ação padrão.
+                  </div>
+                </td>
+              </tr>
+          <tr class="escondebtn showArmaExoticasDistancia">
             <td class="nomearma">Pistola</td>
             <td>250 TO</td>
             <td>2d6</td>
             <td>19-20/x3</td>
             <td>15 m</td>
             <td>1,5 kg</td>
-            <td>Perfuração</td>
+            <td>Perfuração<a id="show_66"><span>+</span></a></td>
           </tr>
-              <tr>
+          <tr class="escondeLeves" id="extra_66">
+            <td colspan="7">
+              <div>
+                A mais popular arma de fogo, tem capacidade para apenas um tiro. 
+                Requer apenas uma mão — mas, quando empunhada com as duas mãos, 
+                a estabilidade extra oferece um bônus de +1 em jogadas de ataque.
+              </div>
+            </td>
+          </tr>
+              <tr class="escondebtn showArmaExoticasDistancia">
                 <td class="municao">Munição</td>
                 <td>5 TO</td>
                 <td>—</td>
                 <td>—</td>
                 <td>—</td>
                 <td>0,5 kg</td>
-                <td>Perfuração</td>
+                <td>Perfuração<a id="show_67"><span>+</span></a></td>
               </tr>
-              <tr>
+              <tr class="escondeLeves" id="extra_67">
+                <td colspan="7">
+                  <div>
+                    Inclui uma bolsa com balas (pequenas esferas de chumbo) 
+                    e pólvora para tiros de mosquete ou pistola vendiadas com 10 balas por 50 TO ou com 1 por 5 TO.
+                    Recarregar um mosquete ou pistola é uma ação padrão.
+                  </div>
+                </td>
+              </tr>
+              <tr class="escondebtn showArmaExoticasDistancia">
                 <td class="municao">Munições (10)</td>
                 <td>50 TO</td>
                 <td>—</td>
                 <td>—</td>
                 <td>—</td>
                 <td>5 kg</td>
-                <td>—</td>
+                <td>—<a id="show_68"><span>+</span></a></td>
               </tr>
-          <tr>
+              <tr class="escondeLeves" id="extra_68">
+                <td colspan="7">
+                  <div>
+                    Inclui uma bolsa com balas (pequenas esferas de chumbo) 
+                    e pólvora para tiros de mosquete ou pistola vendiadas com 10 balas por 50 TO ou com 1 por 5 TO.
+                    Recarregar um mosquete ou pistola é uma ação padrão.
+                  </div>
+                </td>
+              </tr>
+          <tr class="escondebtn showArmaExoticasDistancia">
             <td class="nomearma">Rede</td>
             <td>20 TO</td>
             <td>—</td>
             <td>—</td>
             <td>3m</td>
             <td>3 kg</td>
-            <td>—</td>
+            <td>—<a id="show_69"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_69">
+            <td colspan="7">
+              <div>
+                Uma rede de combate tem pequenos dentes em sua trama, 
+                e uma corda para controlar os inimigos presos. 
+                Você atira a rede, fazendo um ataque de toque à distância. 
+                Se acertar, a criatura fica enredada (-2 nas jogadas de ataque, CA, testes de Destreza, perícias baseadas em Destreza e Reflexos, e deslocamento reduzido à metade).
+                Além disso, se você for bem-sucedido em um teste oposto de Força, a vítima só pode se mover até o limite da corda (9m).
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasDistancia">
             <td class="nomearma">Shuriken</td>
             <td>1 TO</td>
             <td>1d4</td>
             <td>5</td>
             <td>3 m</td>
             <td>250 g</td>
-            <td>Perfuração</td>
+            <td>Perfuração<a id="show_70"><span>+</span></a></td>
           </tr>
-          <tr>
+          <tr class="escondeLeves" id="extra_70">
+            <td colspan="7">
+              <div>
+                Pequenos projéteis metálicos em forma de estrelas ou dardos.
+                Você pode gastar uma ação padrão para arremesar duas shuriken. 
+                Esta é uma arma de monge (significa que pode ser usada com determinadas habilidades, como rajada de golpes).
+              </div>
+            </td>
+          </tr>
+          <tr class="escondebtn showArmaExoticasDistancia">
             <td class="nomearma">Tai-tai</td>
             <td>40 TO</td>
           <td>2d4</td>
           <td>x2</td>
           <td>24 m</td>
           <td>2 kg</td>
-          <td>Esmagamento</td>
-          </tr>
+          <td>Esmagamento<a id="show_71"><span>+</span></a></td>
+        </tr>
+        <tr class="escondeLeves" id="extra_71">
+          <td colspan="7">
+            <div>
+              Halflings são famosos por gostar de jogar pedras, seja como esporte ou forma de combate.
+              Para esta finalidade, desenvolveram certos engenhos. 
+              O tai-tai é uma espécie de catapulta minúscula presa ao braço com fivelas. 
+              Com um movimento correto do pulso, lança uma pedra ou bala de chumbo tão longe quanto um arco lança uma flecha.
+              Recarregar o tai-tai é uma ação de movimento.
+            </div>
+          </td>
+        </tr>
 
 
       </table>
