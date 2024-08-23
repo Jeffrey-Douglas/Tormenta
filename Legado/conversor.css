@@ -1,0 +1,108 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Iokharic;
+  src: url('../fonts/iokharic-font/Iokharic.ttf') format('truetype');
+  font-family: Benguiat;
+  src: url('../fonts/Benguiat.ttf') format('truetype');
+  font-family: Tormenta;
+  src: url('../fonts/Tormenta20.otf') format('opentype');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .container {
+    text-align: center;
+    padding: 20px;
+    height: 60vh;
+  }
+
+  .titulo {
+    font-family: "Tormenta";
+    color: #ffffff;
+    margin: 0 0 5px;
+  }
+
+  .TO {
+    color: #ffd700;
+  }
+  
+  .platina {
+    color: #5391c7;
+  }
+
+  .prata{
+    color: #ffffff;
+  }
+  .cobre {
+    color: #D98719
+  }
+
+
+  .page-subtitle {
+    color: #ffffff;
+    margin-top: 5px;
+  }
+
+  .page-logo {
+    width: 200px;
+  }
+
+  input {
+    margin: 12px;
+    padding: 20px;
+    border-radius: 5px;
+    color: black
+  }
+
+  label {
+    color: white;
+  }
+
+  button {
+    margin-top: 12px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    cursor: pointer;
+    border: none;
+  }
+
+  .delet-button:hover {
+    background-color: red;
+    color: #ffffff;
+  }
+
+  .convert-button:hover {
+    background-color: green;
+    color: #ffffff;
+  }
+
+  h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
+
+  /* Temperatura */
+
+  input[type="number"] {
+    text-align: right;
+  }
+
+  input:disabled,
+  input[type="range"]:disabled {
+    background: #ececec;
+    cursor: not-allowed;
+  }
+
+  input[type="range"] {
+    cursor: pointer;
+    outline: none;
+  }
+

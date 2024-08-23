@@ -82,22 +82,7 @@ span#Juanehugoevitin{
 
 
 
-.segurador{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #2196F3;
-    
-}
 
-.centrosegurador{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    background-color: brown;
-}
 
 .manuais {
     max-width: 400px;

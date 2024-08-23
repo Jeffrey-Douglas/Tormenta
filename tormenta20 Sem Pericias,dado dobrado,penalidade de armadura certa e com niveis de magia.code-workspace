@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "Nova pasta/Ficha de Tormenta 20/V9/tormenta20 Sem Pericias,dado dobrado,penalidade de armadura certa e com niveis de magia"
+		},
+		{
+			"path": "../AppData/Local/FoundryVTT/Data/systems/tormenta20"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "tormenta20"
+	}
+}

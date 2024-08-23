@@ -1,0 +1,37 @@
+body{
+
+    background-image: url("../imagens/dungeon\ background\ 8.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.segurador{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.titulodownload{
+text-align: center;
+    color: rgb(179, 26, 26);
+}
+.centrosegurador{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.divmanual{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgba(177, 177, 177, 0.459);
+
+}
