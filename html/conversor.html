@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <link rel="shortcut icon" href="../imagem/Fav-icon.webp" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/conversor.css">
-    <script src="/js/coversordetibar.js"></script>
-    <title>Document</title>
+  <title>Tudo de Tormenta</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/conversor.css">
+  <header>
+    <ul class="cabecalho">
+      <li class="sobe"><a href="/index.html">Tudo de Tormenta</a></li>
+      <li class="sobe"><a href="https://jeffrey-douglas.github.io/Tormenta/">Site TTD</a></li>
+      <li class="sobe"><a href="criadordepersonagem.html">Criador de Presonagens</a></li>
+      <li class="sobe"><a href="download.html">Downloads</a></li>
+      <li class="sobe"><a href="grimorio.html">Grimório</a></li>
+      <li class="sobe"><a href="loja.html">Loja</a></li>
+      <li class="sobe"><a href="regrasdacasa.html">Regras da Casa</a> </li>
+      <li class="sobe"><a href="talentos.html">Talentos</a></li>
+      <li class="sobe"><a href="conversor.html">Conversor de Tibar</a></li>
+    </ul>
+  </header>
 </head>
+
+
 <body>
-    <div class="container">
-      <h1 class="page-title">
-        Simples conversor de moedas
-      </h1>
-      <br></br>
-      <p class="page-subtitle">
-        Descubra o valor do dolar em reais
-      </p>
-      <br></br>
-     <input type='text' id='valor' class='valorDolar' placeholder='Digite o valor US$'/>
-     <input type ='button' id='btn' class = 'btnConversao' onclick = 'conversao();' value = 'Converter'/>
-    <br></br>
-    <div id="valorReal"></div>
+  <div class="container">
+    <h1 class="tituloConversor">Conversor de Tibar</h1>
+    <p class="converta">Converta seus preciosos <span class="TO">Tibares</span> aqui</p>
+    <div class="caixa">
+
+      <div class="input-container">
+        <label for="input1" class="platina">TL</label>
+        <input type="number" id="input1" oninput="atualizarInputs(1)">
+      </div>
+      
+      <div class="input-container">
+      <label for="input2" class="TO">TO</label>
+      <input type="number" id="input2" oninput="atualizarInputs(2)">
     </div>
-  </body>
+
+    <div class="input-container">
+      <label for="input3" class="Prata">TP</label>
+      <input type="number" id="input3" oninput="atualizarInputs(3)">
+    </div>
+    
+    <div class="input-container">
+      <label for="input4" class="cobre">T$</label>
+      <input type="number" id="input4" oninput="atualizarInputs(4)">
+    </div>
+  
+  </div>
+</div>  
+  <footer>
+    <div class="rodape">Tormenta RPG é propriedade da <a href="https://jamboeditora.com.br" target="_blank" rel="external">Jambo Editora</a></div>
+  </footer>
+  <script src="../js/conversor.js"></script>
+</body>
 </html>
-
-

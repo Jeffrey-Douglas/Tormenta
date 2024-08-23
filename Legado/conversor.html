@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversor de Tibar</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/conversor.css" type="text/css" />
+  <header>
+    <ul class="cabecalho">
+      <li class="sobe"><a href="/index.html">Tudo de Tormenta</a></li>
+      <li class="sobe"><a href="https://jeffrey-douglas.github.io/Tormenta/">Site TTD</a></li>
+      <li class="sobe"><a href="criadordepersonagem.html">Criador de Presonagens</a></li>
+      <li class="sobe"><a href="download.html">Downloads</a></li>
+      <li class="sobe"><a href="grimorio.html">Grimório</a></li>
+      <li class="sobe"><a href="loja.html">Loja</a></li>
+      <li class="sobe"><a href="regrasdacasa.html">Regras da Casa</a> </li>
+      <li class="sobe"><a href="talentos.html">Talentos</a></li>
+      <li class="sobe"><a href="conversor.html">Conversor de Tibar</a></li>
+      <li class="sobe"><a href="conversor2.html">Conversor de Tibar 2</a></li>
+    </ul>
+  </header>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="titulo">Conversor de Tibar</h1>    
+    <label for="moeda">Insira o valor em <span class="TO">Tibares de Ouro</span></label>
+    <form id="form">
+      <input type="number" name="valorEmReal" id="valor" class="input" step="0.01" max="9999999999.99" value="" tabindex="1" size="2" autofocus required />
+      
+      <div class="container-moedas">
+        <input type="radio" id="platina" name="moedaEstrangeira" value="Platina" tabindex="2"/>
+        <label for="platina">TL</label>
+        
+        <input type="radio" id="prata" name="moedaEstrangeira" value="Prata" tabindex="3" />
+        <label for="prata">TP</label>
+
+        <input type="radio" id="cobre" name="moedaEstrangeira" value="Cobre" tabindex="4" />
+        <label for="cobre">T$</label>
+      </div>
+    </form>
+
+    <button type="submit" onclick="Converter()" id="button-converter" class="convert-button" tabindex="6">
+      Converter
+    </button>
+    <button type="reset" onclick="Limpar()" class="delet-button" tabindex="7">
+      Limpar
+    </button>
+
+    <h2 id="valorConvertido"></h2>
+    <h2 id="aviso"></h2>
+  </div>
+
+  <footer>
+    <div class="rodape">Tormenta RPG é propriedade da <a href="https://jamboeditora.com.br" target="_blank" rel="external">Jambo Editora</a></div>
+  </footer>
+  <script src="../js/conversor.js"></script>
+</body>
+
+</html>

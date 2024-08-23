@@ -1,64 +1,73 @@
-body {
-    font-family: 'Roboto Mono',monospace;
-    min-height: 400px;
-    background-image: url('https://blog.maxieduca.com.br/wp-content/uploads/2018/12/Regime.jpg');
+@charset "UTF-8";
+@font-face {
+  font-family: Iokharic;
+  src: url('../fonts/iokharic-font/Iokharic.ttf') format('truetype');
+  font-family: Benguiat;
+  src: url('../fonts/Benguiat.ttf') format('truetype');
+  font-family: Tormenta;
+  src: url('../fonts/Tormenta20.otf') format('opentype');
+}
+
+
+
+  body {
     background-color: #000000;
-    background-size: 230vh;
-    background-position: center bottom;
-    background-repeat: no-repeat;
+    color: #ffffff;
   }
-  
+
   .container {
-    position: center;
     text-align: center;
     padding: 20px;
-    height: 100vh;
   }
-  
-  .page-title {
+
+  .tituloConversor {
+    font-family: "Tormenta";
     color: #ffffff;
-    margin: 0 0 5px;
+    text-align: center; 
   }
   
-  .page-subtitle {
+  .converta {
+    font-family: "torm";
+  }
+  
+  .TO {
+    color: #ffd700;
+  }
+
+  .platina {
+    color: #5391c7;
+  }
+
+  .prata{
     color: #ffffff;
-    font-size: 18px;
-    margin-top: 5px;
   }
-  
-  .valorDolar{
-    text-align: left;
-    font-size:14px;
-    width:130px;
-      height:25px;
+  .cobre {
+    color: #D98719
+  }
+  input {
+    margin: 12px;
+    padding: 20px;
     border-radius: 5px;
+    color: black
+  }
+
+  input[type="number"] {
+    text-align: right;
+  }
+
+  .input-container {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
   }
   
-  .btnConversao{
-    width: 100px;
-      height: 30px;
-    margin: 5px;
-    background-color: black;
-    color: white;
-    font-size: 16px;
-    padding: 5px;
-    border-radius: 15px;
-    border-color: white;
-    cursor: pointer
+  .input-container label {
+    display: block;
   }
-  .valorReal{
-    font-family: 'Montserrat',monospace;
-    color: white;
-    font-size: 30px;
-  }
-  
-  .page-logo {
-    width: 200px;
-  }
-  
-  .alura-logo {
-    width: 40px;
-    position: absolute;
-    top: 10px;
-    right:10px;
+
+  .caixa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
