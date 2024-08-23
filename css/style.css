@@ -30,7 +30,7 @@ ul.cabecalho {
   overflow: hidden;
   background-color: #333;
 }
-li {
+li.sobe {
   float: left;
   border-right: 1px solid red;
 }
