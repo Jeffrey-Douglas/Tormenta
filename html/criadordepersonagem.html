@@ -43,13 +43,14 @@
   <div class="atributos">
     <h1 class="atributos"> Atributos</h1>
     <ul class="atributos">
+      <span>Nivel de Personagem </span><input type="number" id="nivel">
       <div>
         <li class="atributo forca">
           <H4>Força</H4>
           <span>Valor da Habilidade</span>
           <input type="number" id="valorPontosFor" placeholder="VALOR DO ATRIBUTO">
           <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-          <span>Resultado = <span id="modFor"></span></span>
+          <span>Modificador = <span id="modFor"></span></span>
         </li>
       </div>
 
@@ -58,35 +59,35 @@
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosDes" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modDes"></span></span>
+        <span>Modificador = <span id="modDes"></span></span>
       </li>
       <li class="atributo constituicao">
         <H4>Constituição</H4>
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosCon" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modCon"></span></span>
+        <span>Modificador = <span id="modCon"></span></span>
       </li>
       <li class="atributo inteligencia">
         <H4>Inteligência</H4>
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosInt" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modInt"></span></span>
+        <span>Modificador = <span id="modInt"></span></span>
       </li>
       <li class="atributo sabedoria">
         <H4>Sabedoria</H4>
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosSab" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modSab"></span></span>
+        <span>Modificador = <span id="modSab"></span></span>
       </li>
       <li class="atributo carisma">
         <H4>Carisma</H4>
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosCar" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modCar"></span></span>
+        <span>Modificador = <span id="modCar"></span></span>
       </li>
     </ul>
   </div>
@@ -108,7 +109,8 @@
 
   <div class="pericias">
     <h1 class="h1pericias">Perícias</h1>
-    + Penalidade de Armadura --- * Somente Treinado
+    <span>+ Penalidade de Armadura  /  * Somente Treinado     </span>     
+    <button onclick="pericia()"> Mostrar resultado</button>
     <table>
       <thead>
         <tr>
@@ -122,156 +124,155 @@
       </thead>
       <tbody>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoAcro"> </td>
           <td>Acrobacia +</td>
           <td>Destreza</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaAcro">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoAdes"> </td>
           <td>Adestrar Animais *</td>
           <td>Carisma</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaAdes">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoAtle"> </td>
           <td>Atletismo +</td>
           <td>Força</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaAtle">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoAtua"> </td>
           <td>Atuação</td>
           <td>Carisma</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaAtua">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoCava"> </td>
           <td>Cavalgar</td>
           <td>Destreza</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaCava">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoConh"> </td>
           <td>Conhecimento *</td>
           <td>Inteligência</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaConh">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoCura"> </td>
           <td>Cura</td>
-          <td>Sabedoria 
-          </td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td>Sabedoria</td>
+          <td><span id="periciaCura">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoDipl"> </td>
           <td>Diplomacia</td>
           <td>Carisma</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaDipl">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoEnga"> </td>
           <td>Enganação</td>
           <td>Carisma</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaEnga">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoFurt"> </td>
           <td>Furtividade +</td>
           <td>Destreza</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaFurt">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoIden"> </td>
           <td>Identificar Magia *</td>
           <td>Inteligência</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaIden">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoInic"> </td>
           <td>Iniciativa</td>
           <td>Destreza</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaInic">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoInti"> </td>
           <td>Intimidação</td>
           <td>Carisma</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaInti">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoIntu"> </td>
           <td>Intuição</td>
           <td>Sabedoria</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaIntu">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoLadi"> </td>
           <td>Ladinagem +*</td>
           <td>Destreza</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaLadi">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoObte"> </td>
           <td>Obter Informação</td>
           <td>Carisma</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaObte">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoOfic"> </td>
           <td>Ofício</td>
           <td>Inteligência</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaOfic">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoPerc"> </td>
           <td>Percepção</td>
           <td>Sabedoria</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaPerc">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
-          <td>Sim/Não</td>
+          <td><input type="checkbox" id="treinadoSobr"> </td>
           <td>Sobrevivência</td>
           <td>Sabedoria</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaSobr">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
