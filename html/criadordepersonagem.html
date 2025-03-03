@@ -43,13 +43,14 @@
   <div class="atributos">
     <h1 class="atributos"> Atributos</h1>
     <ul class="atributos">
+      <span>Nivel de Personagem </span><input type="number" id="nivel">
       <div>
         <li class="atributo forca">
           <H4>Força</H4>
           <span>Valor da Habilidade</span>
           <input type="number" id="valorPontosFor" placeholder="VALOR DO ATRIBUTO">
           <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-          <span>Resultado = <span id="modFor"></span></span>
+          <span>Modificador = <span id="modFor"></span></span>
         </li>
       </div>
 
@@ -58,35 +59,35 @@
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosDes" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modDes"></span></span>
+        <span>Modificador = <span id="modDes"></span></span>
       </li>
       <li class="atributo constituicao">
         <H4>Constituição</H4>
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosCon" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modCon"></span></span>
+        <span>Modificador = <span id="modCon"></span></span>
       </li>
       <li class="atributo inteligencia">
         <H4>Inteligência</H4>
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosInt" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modInt"></span></span>
+        <span>Modificador = <span id="modInt"></span></span>
       </li>
       <li class="atributo sabedoria">
         <H4>Sabedoria</H4>
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosSab" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modSab"></span></span>
+        <span>Modificador = <span id="modSab"></span></span>
       </li>
       <li class="atributo carisma">
         <H4>Carisma</H4>
         <span>Valor da Habilidade</span>
         <input type="number" id="valorPontosCar" placeholder="VALOR DO ATRIBUTO">
         <button onclick="modificadorHabilidades()"> Mostrar resultado</button>
-        <span>Resultado = <span id="modCar"></span></span>
+        <span>Modificador = <span id="modCar"></span></span>
       </li>
     </ul>
   </div>
@@ -108,7 +109,7 @@
 
   <div class="pericias">
     <h1 class="h1pericias">Perícias</h1>
-    + Penalidade de Armadura --- * Somente Treinado
+    + Penalidade de Armadura  /  * Somente Treinado
     <table>
       <thead>
         <tr>
@@ -122,11 +123,12 @@
       </thead>
       <tbody>
         <tr>
-          <td>Sim/Não</td>
+          <button onclick="pericia()"> Mostrar resultado</button>
+          <td><input type="checkbox" id="treinadoAcro"> </td>
           <td>Acrobacia +</td>
           <td>Destreza</td>
-          <td>Total</td>
-          <td>Outros</td>
+          <td><span id="periciaAcro">0</span></td>
+          <td><input type="number"></td>
           <td>Rolar Dados??</td>
         </tr>
         <tr>
