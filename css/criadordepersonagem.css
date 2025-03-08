@@ -3,3 +3,193 @@
     border-right: 1px solid rgb(179, 255, 0) !important;
     padding: 50px
 }
+
+/* Container de atributos */
+.atributos ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.atributo {
+  display: flex; /* Alinha os itens em linha */
+  justify-content: space-between; /* Espaça os elementos */
+  align-items: center; /* Alinha verticalmente */
+  margin-bottom: 10px;
+}
+
+.atributo label {
+  width: 100px; /* Define o tamanho fixo para o label */
+}
+
+.input {
+  width: 100px; /* Define o tamanho fixo para o input */
+  height: 30px; /* Ajuste a altura do input */
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.modificador {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Alinha o modificador ao lado do input */
+.atributo span {
+  margin-left: 10px; /* Espaçamento entre input e modificador */
+}
+
+  
+/* Container de Perícias */
+.pericias table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pericias th, .pericias td {
+  padding: 10px;
+  text-align: left;
+}
+
+.pericias td {
+  vertical-align: middle;
+}
+
+.pericias input[type="number"] {
+  width: 40px; /* Define um tamanho fixo para os inputs */
+  height: 30px;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 5px;
+}
+
+/* Ajustando o alinhamento para as células da tabela */
+.pericias td span {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.pericias input[type="checkbox"] {
+  margin-right: 10px; /* Espaço entre a checkbox e o texto */
+}
+
+
+/* Container principal para organizar as seções lado a lado */
+.container {
+  display: flex;
+  justify-content: space-between; /* Para deixar os elementos ao longo do eixo horizontal */
+  gap: 20px; /* Espaço entre as duas seções */
+  padding: 20px;
+  flex-wrap: wrap; /* Permite que as seções se reorganizem quando a tela for pequena */
+}
+
+/* Seção de Atributos */
+.atributos {
+  flex: 1; /* Permite que a seção de atributos ocupe um espaço proporcional */
+  max-width: 45%; /* Limita a largura da seção de atributos */
+  padding: 10px;
+}
+
+.atributos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.atributos li {
+  margin-bottom: 15px;
+}
+
+/* Seção de Perícias */
+.pericias {
+  flex: 1; /* A seção de perícias também ocupa um espaço proporcional */
+  max-width: 45%; /* Limita a largura da seção de perícias */
+  padding: 10px;
+  border-left: 2px solid #ccc;
+}
+
+/* Ajuste na tabela de Perícias */
+.pericias table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pericias th, .pericias td {
+  padding: 10px;
+  text-align: left;
+}
+
+.pericias input[type="number"] {
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 5px;
+}
+
+/* Ajustes nos checkbox para perícias */
+.pericias td input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+  
+/* 
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.atributos, .pericias {
+    margin-bottom: 30px;
+}
+
+li.atributo {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .cabecalho {
+        display: block;
+        text-align: center;
+    }
+
+    .atributos, .pericias {
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+
+.atributo, .pericias, .resistencia {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+ */
